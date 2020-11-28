@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Nop Commerce]">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="url" value="https://demo.nopcommerce.com/"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    <listener class-name="commons.MethodListener"/>
+    <listener class-name="reportConfig.ExtentTestListenerVersion4"/>
+  </listeners>
+  <test name="Run on CHROME">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.nopcommerce.common.Common_01_RegisterUser"/>
+      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
+    </classes>
+  </test> <!-- Run on CHROME -->
+</suite> <!-- Failed suite [Nop Commerce] -->
