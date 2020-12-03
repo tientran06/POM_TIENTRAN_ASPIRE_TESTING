@@ -9,12 +9,12 @@ import pageObjects.nopcommerce.HomePageObject;
 import pageObjects.nopcommerce.LoginPageObject;
 import pageObjects.nopcommerce.PageGeneratorManager;
 
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 public class Login_02_Login extends AbstractTest {
@@ -22,9 +22,9 @@ public class Login_02_Login extends AbstractTest {
 	private WebDriver driver;
 	private String email, password;
 
-	@Parameters({ "browser" })
-	@BeforeTest
-	public void beforeTest(@Optional("chrome") String browserName) {
+	@Parameters("browser")
+	@BeforeClass
+	public void beforeClass(@Optional("chrome") String browserName) {
 		driver = getBrowserDriver(browserName);
 		homePage = PageGeneratorManager.getHomePage(driver);
 
@@ -127,8 +127,8 @@ public class Login_02_Login extends AbstractTest {
 		verifyTrue(homePage.isMyAccountLinkDisplayed());
 	}
 
-	@AfterTest(alwaysRun = true)
-	public void afterTest() {
+	@AfterClass(alwaysRun = true)
+	public void afterClass() {
 		closeBrowserAndDriver(driver);
 	}
 

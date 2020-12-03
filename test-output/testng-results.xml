@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Nop Commerce" duration-ms="25406" started-at="2020-11-27T20:06:18Z" finished-at="2020-11-27T20:06:44Z">
+  <suite name="Nop Commerce" duration-ms="64272" started-at="2020-12-03T14:16:06Z" finished-at="2020-12-03T14:17:11Z">
     <groups>
     </groups>
-    <test name="Run on CHROME" duration-ms="25406" started-at="2020-11-27T20:06:18Z" finished-at="2020-11-27T20:06:44Z">
+    <test name="Run on CHROME" duration-ms="64272" started-at="2020-12-03T14:16:06Z" finished-at="2020-12-03T14:17:11Z">
       <class name="com.nopcommerce.common.Common_01_RegisterUser">
-        <test-method status="PASS" signature="createUser(java.lang.String)[pri:0, instance:com.nopcommerce.common.Common_01_RegisterUser@4923ab24]" name="createUser" is-config="true" duration-ms="19548" started-at="2020-11-28T03:05:59Z" finished-at="2020-11-28T03:06:18Z">
+        <test-method status="PASS" signature="createUser(java.lang.String)[pri:0, instance:com.nopcommerce.common.Common_01_RegisterUser@7b69c6ba]" name="createUser" is-config="true" duration-ms="17659" started-at="2020-12-03T21:15:49Z" finished-at="2020-12-03T21:16:06Z">
           <params>
             <param index="0">
               <value>
@@ -19,8 +19,8 @@
           </reporter-output>
         </test-method> <!-- createUser -->
       </class> <!-- com.nopcommerce.common.Common_01_RegisterUser -->
-      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@44c8afef]" name="beforeTest" is-config="true" duration-ms="13260" started-at="2020-11-28T03:06:18Z" finished-at="2020-11-28T03:06:31Z">
+      <class name="com.nopcommerce.login.Login_02_Login">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="beforeClass" is-config="true" duration-ms="8471" started-at="2020-12-03T21:16:06Z" finished-at="2020-12-03T21:16:15Z">
           <params>
             <param index="0">
               <value>
@@ -30,27 +30,108 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="TC_01_Update_Customer_Infor()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@44c8afef]" name="TC_01_Update_Customer_Infor" duration-ms="4003" started-at="2020-11-28T03:06:31Z" finished-at="2020-11-28T03:06:35Z">
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="beforeMethod" is-config="true" duration-ms="1507" started-at="2020-12-03T21:16:15Z" finished-at="2020-12-03T21:16:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_01_LoginWithEmptyData()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="TC_01_LoginWithEmptyData" duration-ms="550" started-at="2020-12-03T21:16:16Z" finished-at="2020-12-03T21:16:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_01_LoginWithEmptyData -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="beforeMethod" is-config="true" duration-ms="1226" started-at="2020-12-03T21:16:17Z" finished-at="2020-12-03T21:16:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_02_LoginWithInvalidEmail()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="TC_02_LoginWithInvalidEmail" duration-ms="627" started-at="2020-12-03T21:16:18Z" finished-at="2020-12-03T21:16:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_02_LoginWithInvalidEmail -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="beforeMethod" is-config="true" duration-ms="549" started-at="2020-12-03T21:16:19Z" finished-at="2020-12-03T21:16:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_03_LoginWithIncorrectEmail()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="TC_03_LoginWithIncorrectEmail" duration-ms="1814" started-at="2020-12-03T21:16:19Z" finished-at="2020-12-03T21:16:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_03_LoginWithIncorrectEmail -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="beforeMethod" is-config="true" duration-ms="1263" started-at="2020-12-03T21:16:21Z" finished-at="2020-12-03T21:16:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_04_LoginWithEmptyPass()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="TC_04_LoginWithEmptyPass" duration-ms="1712" started-at="2020-12-03T21:16:22Z" finished-at="2020-12-03T21:16:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_04_LoginWithEmptyPass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="beforeMethod" is-config="true" duration-ms="606" started-at="2020-12-03T21:16:24Z" finished-at="2020-12-03T21:16:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_05_LoginWithWrongPass()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="TC_05_LoginWithWrongPass" duration-ms="1071" started-at="2020-12-03T21:16:25Z" finished-at="2020-12-03T21:16:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_05_LoginWithWrongPass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="beforeMethod" is-config="true" duration-ms="1191" started-at="2020-12-03T21:16:26Z" finished-at="2020-12-03T21:16:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_06_LoginToTheSystem()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="TC_06_LoginToTheSystem" duration-ms="2266" started-at="2020-12-03T21:16:27Z" finished-at="2020-12-03T21:16:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC_06_LoginToTheSystem -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.nopcommerce.login.Login_02_Login@46daef40]" name="afterClass" is-config="true" duration-ms="966" started-at="2020-12-03T21:16:29Z" finished-at="2020-12-03T21:16:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.nopcommerce.login.Login_02_Login -->
+      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="beforeClass" is-config="true" duration-ms="12250" started-at="2020-12-03T21:16:30Z" finished-at="2020-12-03T21:16:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="beforeMethod" is-config="true" duration-ms="1584" started-at="2020-12-03T21:16:42Z" finished-at="2020-12-03T21:16:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_01_Update_Customer_Infor()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="TC_01_Update_Customer_Infor" duration-ms="3117" started-at="2020-12-03T21:16:44Z" finished-at="2020-12-03T21:16:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_01_Update_Customer_Infor -->
-        <test-method status="PASS" signature="TC_02_Add_Address()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@44c8afef]" name="TC_02_Add_Address" duration-ms="7100" started-at="2020-11-28T03:06:35Z" finished-at="2020-11-28T03:06:43Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="beforeMethod" is-config="true" duration-ms="636" started-at="2020-12-03T21:16:47Z" finished-at="2020-12-03T21:16:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_02_Add_Address()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="TC_02_Add_Address" duration-ms="5661" started-at="2020-12-03T21:16:48Z" depends-on-methods="com.nopcommerce.myaccount.MyAccount_01_EditAccount.TC_01_Update_Customer_Infor" finished-at="2020-12-03T21:16:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_02_Add_Address -->
-        <test-method status="PASS" signature="TC_03_Change_Password()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@44c8afef]" name="TC_03_Change_Password" duration-ms="1" started-at="2020-11-28T03:06:43Z" finished-at="2020-11-28T03:06:43Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="beforeMethod" is-config="true" duration-ms="1529" started-at="2020-12-03T21:16:53Z" finished-at="2020-12-03T21:16:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_03_Change_Password()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="TC_03_Change_Password" duration-ms="6482" started-at="2020-12-03T21:16:55Z" depends-on-methods="com.nopcommerce.myaccount.MyAccount_01_EditAccount.TC_02_Add_Address" finished-at="2020-12-03T21:17:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_03_Change_Password -->
-        <test-method status="PASS" signature="TC_04_Add_Review_Product()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@44c8afef]" name="TC_04_Add_Review_Product" duration-ms="1" started-at="2020-11-28T03:06:43Z" finished-at="2020-11-28T03:06:43Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="beforeMethod" is-config="true" duration-ms="1552" started-at="2020-12-03T21:17:01Z" finished-at="2020-12-03T21:17:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="TC_04_Add_Review_Product()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="TC_04_Add_Review_Product" duration-ms="6612" started-at="2020-12-03T21:17:03Z" depends-on-methods="com.nopcommerce.myaccount.MyAccount_01_EditAccount.TC_03_Change_Password" finished-at="2020-12-03T21:17:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TC_04_Add_Review_Product -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@44c8afef]" name="afterTest" is-config="true" duration-ms="1009" started-at="2020-11-28T03:06:43Z" finished-at="2020-11-28T03:06:44Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.nopcommerce.myaccount.MyAccount_01_EditAccount@12f41634]" name="afterClass" is-config="true" duration-ms="981" started-at="2020-12-03T21:17:10Z" finished-at="2020-12-03T21:17:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterTest -->
+        </test-method> <!-- afterClass -->
       </class> <!-- com.nopcommerce.myaccount.MyAccount_01_EditAccount -->
     </test> <!-- Run on CHROME -->
   </suite> <!-- Nop Commerce -->

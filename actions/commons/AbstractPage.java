@@ -731,12 +731,26 @@ public class AbstractPage {
 	}
 
 	// **************** Common Methods of NOP COMMERCE ************************** //
-	
+
 	public void clickToHeaderLinkByName(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_LINK, pageName);
 		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_LINK, pageName);
 	}
-	
+
+	public void clickToNopCommerceHeaderMenuByText(WebDriver driver, String menuName) {
+		waitForElementPresence(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_MENU, menuName);
+		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_SUB_MENU, menuName);
+	}
+
+	public void clickToNopCommerceSubMenuByText(WebDriver driver, String parentMenu, String subMenu) {
+		waitForElementPresence(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_MENU, parentMenu);
+		moveToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_MENU, parentMenu);
+
+		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_SUB_MENU, parentMenu, subMenu);
+		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_SUB_MENU, parentMenu, subMenu);
+
+	}
+
 	public void clickToListBoxMenuByName(WebDriver driver, String menuName) {
 		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_LISTBOX_MENU, menuName);
 		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_LISTBOX_MENU, menuName);
@@ -745,12 +759,17 @@ public class AbstractPage {
 	public void clickToRadioButtonByID(WebDriver driver, String radioValue) {
 		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_RADIO, radioValue);
 		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_RADIO, radioValue);
-		
+
 	}
 
 	public void inputToTextBoxByID(WebDriver driver, String idValue, String inputValue) {
 		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_TEXTBOX, idValue);
 		sendKeyToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_TEXTBOX, inputValue, idValue);
+	}
+
+	public void inputToTextAreaByClass(WebDriver driver, String classValue, String inputValue) {
+		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_TEXTAREA, classValue);
+		sendKeyToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_TEXTAREA, inputValue, classValue);
 	}
 
 	public void selectDropdownListByName(WebDriver driver, String dropdownName, String valueItem) {
@@ -762,7 +781,7 @@ public class AbstractPage {
 		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_BUTTON, buttonValue);
 		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_BUTTON, buttonValue);
 	}
-	
+
 	public boolean isRadioButtonSelectedByID(WebDriver driver, String idValue) {
 		waitForElementPresence(driver, AbstractPageNopCommerceUI.DYNAMIC_RADIO, idValue);
 		return isElementSelected(driver, AbstractPageNopCommerceUI.DYNAMIC_RADIO, idValue);
@@ -778,5 +797,14 @@ public class AbstractPage {
 		return isElementSelected(driver, AbstractPageNopCommerceUI.DYNAMIC_SELECTED_DROPDOWN_LIST, dropdownName, selectedText);
 	}
 
+	public String getNopCommerceTextByClass(WebDriver driver, String classValue) {
+		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_RESULT_MSG, classValue);
+		return getTextElement(driver, AbstractPageNopCommerceUI.DYNAMIC_RESULT_MSG, classValue);
+	}
+
+	public void clickToNopCommerceLinkByClass(WebDriver driver, String classValue, String textValue) {
+		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
+		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
+	}
 
 }

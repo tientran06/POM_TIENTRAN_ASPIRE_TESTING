@@ -4,15 +4,15 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="8.361">
+           time="8.040">
   <properties />
   
   
-            <testcase name="TC_06_LoginToTheSystem" time="2.249" classname="com.nopcommerce.login.Login_02_Login" />
-                <testcase name="TC_04_LoginWithEmptyPass" time="1.842" classname="com.nopcommerce.login.Login_02_Login" />
-                <testcase name="TC_05_LoginWithWrongPass" time="1.122" classname="com.nopcommerce.login.Login_02_Login" />
-                <testcase name="TC_02_LoginWithInvalidEmail" time="0.622" classname="com.nopcommerce.login.Login_02_Login" />
-                <testcase name="TC_01_LoginWithEmptyData" time="0.597" classname="com.nopcommerce.login.Login_02_Login" />
-                <testcase name="TC_03_LoginWithIncorrectEmail" time="1.929" classname="com.nopcommerce.login.Login_02_Login" />
+            <testcase name="TC_01_LoginWithEmptyData" time="0.550" classname="com.nopcommerce.login.Login_02_Login" />
+                <testcase name="TC_06_LoginToTheSystem" time="2.266" classname="com.nopcommerce.login.Login_02_Login" />
+                <testcase name="TC_05_LoginWithWrongPass" time="1.071" classname="com.nopcommerce.login.Login_02_Login" />
+                <testcase name="TC_02_LoginWithInvalidEmail" time="0.627" classname="com.nopcommerce.login.Login_02_Login" />
+                <testcase name="TC_04_LoginWithEmptyPass" time="1.712" classname="com.nopcommerce.login.Login_02_Login" />
+                <testcase name="TC_03_LoginWithIncorrectEmail" time="1.814" classname="com.nopcommerce.login.Login_02_Login" />
       
 </testsuite>

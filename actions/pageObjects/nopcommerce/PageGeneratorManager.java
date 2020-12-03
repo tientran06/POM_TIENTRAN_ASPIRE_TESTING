@@ -21,4 +21,16 @@ public class PageGeneratorManager {
 		return new MyAccountPageObject(driver);
 	}
 
+	public static HeaderSoftwarePageObject getHeaderSoftwarePage(WebDriver driver) {
+		return new HeaderSoftwarePageObject(driver);
+	}
+
+	public static ProductPageObject getProductPage(WebDriver driver) {
+		return new ProductPageObject(driver);
+	}
+
+	public static ProductReviewPageObject getProductReviewPage(WebDriver driver) {
+		return new ProductReviewPageObject(driver);
+	}
+
 }

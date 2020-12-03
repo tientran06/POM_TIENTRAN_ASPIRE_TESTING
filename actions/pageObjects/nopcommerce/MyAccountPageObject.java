@@ -4,8 +4,9 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import pageUIs.nopcommerce.MyAccountPageUI;
+import pageUIs.nopcommerce.ProductReviewPageUI;
 
-public class MyAccountPageObject extends AbstractPage{
+public class MyAccountPageObject extends AbstractPage {
 	WebDriver driver;
 
 	public MyAccountPageObject(WebDriver _driver) {
@@ -22,5 +23,9 @@ public class MyAccountPageObject extends AbstractPage{
 		return isElementDisplayed(driver, MyAccountPageUI.DYNAMIC_ADDRESS_INFO, classValue, textInfo);
 	}
 
+	public String getReviewInfoByClass(String classValue, String textValue) {
+		waitForElementVisible(driver, ProductReviewPageUI.DYNAMIC_REVIEW_INFO, classValue, textValue);
+		return getTextElement(driver, ProductReviewPageUI.DYNAMIC_REVIEW_INFO, classValue, textValue);
+	}
 
 }

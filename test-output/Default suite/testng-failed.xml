@@ -3,7 +3,21 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.nopcommerce.login.Login_02_Login"/>
+      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount">
+        <methods>
+          <include name="TC_01_Update_Customer_Infor"/>
+          <include name="TC_04_Add_Review_Product"/>
+          <include name="beforeTest"/>
+          <include name="TC_02_Add_Address"/>
+          <include name="TC_03_Change_Password"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- com.nopcommerce.myaccount.MyAccount_01_EditAccount -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

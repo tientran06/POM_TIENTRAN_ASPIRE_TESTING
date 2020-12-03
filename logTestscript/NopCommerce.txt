@@ -1,28 +1,82 @@
-2020-11-28 03:06:15,234 INFO  com.nopcommerce.common.Common_01_RegisterUser -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:26,987 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - Pre-conditions: Login to the System and go to My Account page
-2020-11-28 03:06:31,963 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_01_Update_Customer_Infor - Step 01: Edit data
-2020-11-28 03:06:34,578 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_01_Update_Customer_Infor - Step 02: Click Save button
-2020-11-28 03:06:35,542 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_01_Update_Customer_Infor - Step 03: Verify result after editing data
-2020-11-28 03:06:35,575 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:35,633 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:35,696 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:35,746 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:35,793 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:35,841 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:35,898 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:35,948 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:35,957 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_02_Add_Address - Step 01: Click to 'Addresses' List menu
-2020-11-28 03:06:36,528 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_02_Add_Address - Step 02: Click to 'Add new' button and input Address infor
-2020-11-28 03:06:40,802 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_02_Add_Address - Step 03: Click Save button
-2020-11-28 03:06:42,411 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_02_Add_Address - Step 04: Verify Address infor are saved successfully
-2020-11-28 03:06:42,481 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:42,538 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:42,602 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:42,688 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:42,760 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:42,827 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:42,896 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:42,961 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:43,051 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
-2020-11-28 03:06:43,063 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - OS Name = windows 10
-2020-11-28 03:06:44,071 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - ---------------------- QUIT BROWSER SUCCESS ----------------------
+2020-12-03 21:16:04,974 INFO  com.nopcommerce.common.Common_01_RegisterUser -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:16,797 INFO  com.nopcommerce.login.Login_02_Login - TC_01_LoginWithEmptyData - Step 01: Input value
+2020-12-03 21:16:17,115 INFO  com.nopcommerce.login.Login_02_Login - TC_01_LoginWithEmptyData - Step 02: Click to Log in button
+2020-12-03 21:16:17,270 INFO  com.nopcommerce.login.Login_02_Login - TC_01_LoginWithEmptyData - Step 03: Verify Error message displays
+2020-12-03 21:16:17,340 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:18,572 INFO  com.nopcommerce.login.Login_02_Login - TC_02_LoginWithInvalidEmail - Step 01: Input value
+2020-12-03 21:16:18,958 INFO  com.nopcommerce.login.Login_02_Login - TC_02_LoginWithInvalidEmail - Step 02: Click to Log in button
+2020-12-03 21:16:19,109 INFO  com.nopcommerce.login.Login_02_Login - TC_02_LoginWithInvalidEmail - Step 03: Verify Error message displays
+2020-12-03 21:16:19,195 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:19,746 INFO  com.nopcommerce.login.Login_02_Login - TC_03_LoginWithIncorrectEmail - Step 01: Input value
+2020-12-03 21:16:20,092 INFO  com.nopcommerce.login.Login_02_Login - TC_03_LoginWithIncorrectEmail - Step 02: Click to Log in button
+2020-12-03 21:16:21,403 INFO  com.nopcommerce.login.Login_02_Login - TC_03_LoginWithIncorrectEmail - Step 03: Verify Validation message displays
+2020-12-03 21:16:21,489 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:21,559 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:22,824 INFO  com.nopcommerce.login.Login_02_Login - TC_04_LoginWithEmptyPass - Step 01: Input value
+2020-12-03 21:16:23,153 INFO  com.nopcommerce.login.Login_02_Login - TC_04_LoginWithEmptyPass - Step 02: Click to Log in button
+2020-12-03 21:16:24,397 INFO  com.nopcommerce.login.Login_02_Login - TC_04_LoginWithEmptyPass - Step 03: Verify Validation message displays
+2020-12-03 21:16:24,466 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:24,535 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:25,144 INFO  com.nopcommerce.login.Login_02_Login - TC_05_LoginWithWrongPass - Step 01: Input value
+2020-12-03 21:16:25,491 INFO  com.nopcommerce.login.Login_02_Login - TC_05_LoginWithWrongPass - Step 02: Click to Log in button
+2020-12-03 21:16:26,086 INFO  com.nopcommerce.login.Login_02_Login - TC_05_LoginWithWrongPass - Step 03: Verify Validation message displays
+2020-12-03 21:16:26,158 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:26,214 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:27,408 INFO  com.nopcommerce.login.Login_02_Login - TC_06_LoginToTheSystem - Step 01: Input value
+2020-12-03 21:16:27,754 INFO  com.nopcommerce.login.Login_02_Login - TC_06_LoginToTheSystem - Step 02: Click to Log in button
+2020-12-03 21:16:29,603 INFO  com.nopcommerce.login.Login_02_Login - TC_06_LoginToTheSystem - Step 03: Verify succesfull message displays
+2020-12-03 21:16:29,673 INFO  com.nopcommerce.login.Login_02_Login -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:29,675 INFO  com.nopcommerce.login.Login_02_Login - OS Name = windows 10
+2020-12-03 21:16:30,640 INFO  com.nopcommerce.login.Login_02_Login - ---------------------- QUIT BROWSER SUCCESS ----------------------
+2020-12-03 21:16:39,011 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - Pre-conditions: Login to the System and go to My Account page
+2020-12-03 21:16:44,476 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_01_Update_Customer_Infor - Step 01: Edit data
+2020-12-03 21:16:46,234 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_01_Update_Customer_Infor - Step 02: Click Save button
+2020-12-03 21:16:47,234 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_01_Update_Customer_Infor - Step 03: Verify result after editing data
+2020-12-03 21:16:47,267 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:47,322 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:47,381 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:47,417 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:47,453 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:47,485 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:47,537 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:47,590 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:48,235 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_02_Add_Address - Step 01: Click to 'Addresses' List menu
+2020-12-03 21:16:48,802 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_02_Add_Address - Step 02: Click to 'Add new' button and input Address infor
+2020-12-03 21:16:52,325 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_02_Add_Address - Step 03: Click Save button
+2020-12-03 21:16:53,344 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_02_Add_Address - Step 04: Verify Address infor are saved successfully
+2020-12-03 21:16:53,399 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,451 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,507 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,562 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,622 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,681 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,743 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,801 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,840 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:53,893 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:55,427 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_03_Change_Password - Step 01: Click to 'Change password' List menu
+2020-12-03 21:16:56,007 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_03_Change_Password - Step 02: Input old password and new password info
+2020-12-03 21:16:56,453 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_03_Change_Password - Step 03: Click to 'Change password' button
+2020-12-03 21:16:57,065 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_03_Change_Password - Step 04: Verify message displayed after changing password successfully
+2020-12-03 21:16:57,125 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:57,127 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_03_Change_Password - Step 05: Click Log out button
+2020-12-03 21:16:58,205 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_03_Change_Password - Step 06: Log in into the system with old password and verify Error message displays
+2020-12-03 21:16:59,844 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:59,919 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:16:59,919 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_03_Change_Password - Step 07: Log in into the system with password which is change and verify log in successfully
+2020-12-03 21:17:01,907 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:17:03,463 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 01: Click to Sub Menu
+2020-12-03 21:17:04,725 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 02: Click to Product link
+2020-12-03 21:17:06,002 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 03: Click to 'Add your review' link
+2020-12-03 21:17:07,418 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 04: Leave a review about Product
+2020-12-03 21:17:07,958 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 05: Click to 'Submit review' button
+2020-12-03 21:17:08,670 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 06: Verify Submit review successfully
+2020-12-03 21:17:08,732 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:17:08,734 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 07: Click to 'My account' link
+2020-12-03 21:17:09,346 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 08: Click to 'My product reviews' List menu
+2020-12-03 21:17:09,901 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - TC_04_Add_Review_Product - Step 09: Verify the Review is added into 'My product reviews' with detail
+2020-12-03 21:17:09,956 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:17:10,015 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:17:10,073 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount -  -------------------------- PASSED -------------------------- 
+2020-12-03 21:17:10,074 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - OS Name = windows 10
+2020-12-03 21:17:11,055 INFO  com.nopcommerce.myaccount.MyAccount_01_EditAccount - ---------------------- QUIT BROWSER SUCCESS ----------------------

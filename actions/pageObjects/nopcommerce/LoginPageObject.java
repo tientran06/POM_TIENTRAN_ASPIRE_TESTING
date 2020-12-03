@@ -35,9 +35,9 @@ public class LoginPageObject extends AbstractPage {
 		return isElementDisplayed(driver, LoginPageUI.DYNAMIC_ERROR_MSG, idValue, errorMessage);
 	}
 
-	public boolean isResultErrorMsgByClassDisplayed(String iDValue, String errorMessage) {
-		waitForElementVisible(driver, LoginPageUI.DYNAMIC_VALIDATION_MSG, iDValue, errorMessage);
-		return isElementDisplayed(driver, LoginPageUI.DYNAMIC_VALIDATION_MSG, iDValue, errorMessage);
+	public boolean isResultErrorMsgByClassDisplayed(String classValue, String errorMessage) {
+		waitForElementVisible(driver, LoginPageUI.DYNAMIC_VALIDATION_MSG, classValue, errorMessage);
+		return isElementDisplayed(driver, LoginPageUI.DYNAMIC_VALIDATION_MSG, classValue, errorMessage);
 	}
 
 }
