@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Nop Commerce]" parallel="classes">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Nop Commerce]">
   <parameter name="browser" value="chrome"/>
   <parameter name="url" value="https://demo.nopcommerce.com/"/>
   <listeners>
@@ -13,6 +13,7 @@
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.nopcommerce.common.Common_01_RegisterUser"/>
+      <class name="com.nopcommerce.login.Login_01_Register"/>
       <class name="com.nopcommerce.login.Login_02_Login"/>
       <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
     </classes>

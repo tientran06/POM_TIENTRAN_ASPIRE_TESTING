@@ -23,4 +23,9 @@ public class HomePageObject extends AbstractPage{
 		return isElementDisplayed(driver, HomePageUI.MYACCOUNT_LINK);
 	}
 
+	public void clicktoLogoutButton() {
+		waitForElementClickable(driver, HomePageUI.LOGOUT_LINK);
+		clickToElement(driver, HomePageUI.LOGOUT_LINK);
+	}
+
 }

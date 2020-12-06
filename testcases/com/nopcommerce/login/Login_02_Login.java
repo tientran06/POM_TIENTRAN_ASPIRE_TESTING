@@ -35,7 +35,7 @@ public class Login_02_Login extends AbstractTest {
 
 	@BeforeMethod
 	public void beforeMethod() {
-		homePage.clickToHeaderLinkByName(driver, "Log in");
+		homePage.clickToNopCommerceHeaderLinkByName(driver, "Log in");
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 
 	}
@@ -125,6 +125,7 @@ public class Login_02_Login extends AbstractTest {
 
 		log.info("TC_06_LoginToTheSystem - Step 03: Verify succesfull message displays");
 		verifyTrue(homePage.isMyAccountLinkDisplayed());
+		homePage.clicktoLogoutButton();
 	}
 
 	@AfterClass(alwaysRun = true)

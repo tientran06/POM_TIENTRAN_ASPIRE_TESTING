@@ -32,7 +32,8 @@ public class AbstractPageNopCommerceUI {
 	public static final String DYNAMIC_SELECTED_DROPDOWN_LIST = "//select[@name = '%s']//option[text() = '%s']";
 	
 	//Button
-	public static final String DYNAMIC_BUTTON = "//input[@value = '%s']";
+	public static final String DYNAMIC_BUTTON = "//div[@class = 'buttons']//input[@value = '%s']";
+	public static final String DYNAMIC_ADD_BUTTON = "//div[@class = 'add-button']//input[@value = '%s']";
 	
 	//Checkbox
 	public static final String DYNAMIC_CHECKBOX = "//input[@type = 'checkbox' and @id = '%s']";
@@ -42,6 +43,9 @@ public class AbstractPageNopCommerceUI {
 	
 	// Result Message
 	public static final String DYNAMIC_RESULT_MSG = "//div[@class = '%s']";
+	
+	// Product Title
+	public static final String DYNAMIC_PRODUCT_TITLE = "//div[@class = 'details']//h2[@class = 'product-title']//a[contains(text(),'%s')]";
 
 }
 	

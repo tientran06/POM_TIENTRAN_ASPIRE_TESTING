@@ -48,7 +48,7 @@ public class Common_01_RegisterUser extends AbstractTest {
 		registerPage.clickToSubmitButton();
 
 		verifyTrue(registerPage.isRegisterSuccessMsgDisplayed("Your registration completed"));
-		registerPage.clickToHeaderLinkByName(driver, "Log out");
+		registerPage.clickToNopCommerceHeaderLinkByName(driver, "Log out");
 		driver.quit();
 	}
 }

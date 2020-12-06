@@ -181,7 +181,7 @@ public class Login_01_Register extends AbstractTest {
 
 		log.info("TC_06_RegisterToSystem - Step 03: Verify successful message displays");
 		verifyTrue(registerPage.isRegisterSuccessMsgDisplayed("Your registration completed"));
-		registerPage.clickToHeaderLinkByName(driver, "Log out");
+		registerPage.clickToNopCommerceHeaderLinkByName(driver, "Log out");
 	}
 
 	@AfterClass(alwaysRun = true)

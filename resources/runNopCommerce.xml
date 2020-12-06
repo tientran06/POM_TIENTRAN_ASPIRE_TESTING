@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Nop Commerce" parallel="classes" thread-count="1">
+<suite name="Nop Commerce" parallel="false" thread-count="2">
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
@@ -12,22 +12,21 @@
 	<parameter name="browser" value="chrome" />
 	<parameter name="url" value="https://demo.nopcommerce.com/" />
 
-	<!-- <test name="Run on FIREFOX"> -->
-	<!-- <parameter name="browser" value="firefox" /> -->
-	<!-- <classes> -->
-	<!-- <class name="com.nopcommerce.login.Login_01_Register" /> -->
-	<!-- <class name="com.nopcommerce.login.Login_02_Login" /> -->
-	<!-- </classes> -->
-	<!-- </test> -->
+	<!-- <test name="Run on FIREFOX">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.nopcommerce.login.Login_01_Register" />
+			<class name="com.nopcommerce.login.Login_02_Login" />
+		</classes>
+	</test> -->
 	<test name="Run on CHROME">
 		<parameter name="browser" value="chrome" />
-		<!-- <packages> -->
-		<!-- <package name = "com.nopcommerce.login"/> -->
-		<!-- </packages> -->
+		<!-- <packages> <package name="com.nopcommerce.search"/> </packages> -->
 		<classes>
 			<class name="com.nopcommerce.common.Common_01_RegisterUser" />
 			<class name="com.nopcommerce.login.Login_01_Register" />
 			<class name="com.nopcommerce.login.Login_02_Login" />
+			<class name="com.nopcommerce.search.Search_01_SearchData" />
 			<class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount" />
 		</classes>
 

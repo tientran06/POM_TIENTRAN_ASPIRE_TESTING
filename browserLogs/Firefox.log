@@ -1,4 +1,4 @@
-1606926561577	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-private" "-foreground" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofilelHwsiB"
+1607194404039	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-private" "-foreground" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofile7LaxeR"
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
 WARNING: content window passed to PrivateBrowsingUtils.isWindowPrivate. Use isContentWindowPrivate instead (but only for frame scripts).
@@ -11,11 +11,9 @@ loadURI@chrome://global/content/elements/browser-custom-element.js:1011:12
 render/<@chrome://mozapps/content/extensions/aboutaddons.js:2349:15
 render@chrome://mozapps/content/extensions/aboutaddons.js:2308:11
 JavaScript error: chrome://extensions/content/ext-browser-content.js, line 266: TypeError: elem is null
-1606926566178	Marionette	INFO	Listeni1606926586137	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
-TimedPromise/<@chrome://mJavaScript error: https://demo.nopcommerce.com/login?returnUrl=%2F, line 1: ReferenceError: $ is not defined
-JavaScript error: https://demo.nopcommerce.com/login?returnUrl=%2F, line 1: ReferenceError: $ is not defined
-JavaScript error: http1606926674871	Marionette	INFO	Stopped listening on port 54401
-WARNING: At least one completion condition is taking too long to complete. Conditions: [{"name":"SessionStore: flushing all windows","state":{"total":1,"current":0},"filename":"resource:///modules/sessionstore/SessionStore.jsm","lineNumber":2205,"stack":["resource:///modules/sessionstore/SessionStore.jsm:ssi_onQuitApplicationGranted:2205","resource:///modules/sessionstore/SessionStore.jsm:ssi_observe:915","chrome://marionette/content/driver.js:GeckoDriver.prototype.quit:3514","chrome://marionette/content/server.js:despatch:305","chrome://marionette/content/server.js:execute:275","chrome://marionette/content/server.js:onPacket/<:248","chrome://marionette/content/server.js:onPacket:249","chrome://marionette/content/transport.js:_onJSONObjectReady/<:501"]}] Barrier: quit-application-granted
+1607194407482	Marionette	INFO	Listening on port 57757
+1607194407659	Marionette	WARN	TLS certificate errors will be ignored for this session
+1607194423731	Marionette	INFO	Stopped listening on port 57757
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 
