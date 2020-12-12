@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Nop Commerce]">
-  <parameter name="browser" value="chrome"/>
-  <parameter name="url" value="https://demo.nopcommerce.com/"/>
-  <listeners>
-    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
-    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-    <listener class-name="commons.MethodListener"/>
-    <listener class-name="reportConfig.ExtentTestListenerVersion4"/>
-  </listeners>
-  <test name="Run on CHROME">
-    <parameter name="browser" value="chrome"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test verbose="2" name="Default test">
     <classes>
-      <class name="com.nopcommerce.common.Common_01_RegisterUser"/>
-      <class name="com.nopcommerce.login.Login_01_Register"/>
-      <class name="com.nopcommerce.login.Login_02_Login"/>
-      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
+      <class name="com.nopcommerce.others.Others_03_WishlistAndCompare"/>
     </classes>
-  </test> <!-- Run on CHROME -->
-</suite> <!-- Failed suite [Nop Commerce] -->
+  </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.nopcommerce.others.Others_03_WishlistAndCompare">
+        <methods>
+          <include name="TC_04_AddProductToCompareAndClearList"/>
+          <include name="TC_05_RecentlyViewedProducts"/>
+          <include name="beforeClass"/>
+          <include name="TC_03_RemoveProductInWishlistPage"/>
+          <include name="TC_01_AddToWishlist"/>
+          <include name="TC_06_AddProductToCompareAndRemove"/>
+          <include name="TC_02_AddProductToCartFromWishlistPage"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- com.nopcommerce.others.Others_03_WishlistAndCompare -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

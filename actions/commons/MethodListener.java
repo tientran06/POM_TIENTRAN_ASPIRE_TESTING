@@ -1,7 +1,5 @@
 package commons;
 
-import java.util.List;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.testng.IInvokedMethod;
@@ -10,7 +8,11 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.internal.Utils;
 
+import java.util.List;
+
 public class MethodListener implements IInvokedMethodListener {
+	private static final Log log = LogFactory.getLog(MethodListener.class);
+
 	@Override
 	public void beforeInvocation(IInvokedMethod method, ITestResult result) {
 		log.debug("Before invocation of " + method.getTestMethod().getMethodName());
@@ -51,6 +53,4 @@ public class MethodListener implements IInvokedMethodListener {
 			}
 		}
 	}
-
-	private static final Log log = LogFactory.getLog(MethodListener.class);
 }

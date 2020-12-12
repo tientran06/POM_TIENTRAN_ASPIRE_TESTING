@@ -9,7 +9,11 @@
 	<classpathentry kind="lib" path="libraries/webdrivermanager-3.6.2.jar"/>
 	<classpathentry kind="lib" path="libraries/slf4j-api-1.7.25.jar"/>
 	<classpathentry kind="lib" path="libraries/snakeyaml-1.23.jar"/>
-	<classpathentry kind="lib" path="libraries/testng-6.9.10.jar"/>
+	<classpathentry kind="lib" path="libraries/testng-6.9.10.jar">
+		<attributes>
+			<attribute name="source_encoding" value="UTF-8"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="libraries/velocity-1.4.jar"/>
 	<classpathentry kind="lib" path="libraries/jcommander-1.48.jar"/>
 	<classpathentry kind="lib" path="libraries/joda-time-2.4-javadoc.jar"/>

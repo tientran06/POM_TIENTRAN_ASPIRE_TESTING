@@ -1,32 +1,23 @@
-package com.nopcommerce.myaccount;
-
-import org.testng.annotations.Test;
+package com.nopcommerce.others;
 
 import com.nopcommerce.common.Common_01_RegisterUser;
-
 import commons.AbstractTest;
-import pageObjects.nopcommerce.HeaderSoftwarePageObject;
-import pageObjects.nopcommerce.HomePageObject;
-import pageObjects.nopcommerce.LoginPageObject;
-import pageObjects.nopcommerce.MyAccountPageObject;
-import pageObjects.nopcommerce.PageGeneratorManager;
-import pageObjects.nopcommerce.ProductPageObject;
-import pageObjects.nopcommerce.ProductReviewPageObject;
-
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
+import pageObjects.nopcommerce.*;
 
-public class MyAccount_01_EditAccount extends AbstractTest {
+public class Others_01_MyAccount extends AbstractTest {
 
 	private WebDriver driver;
 	private String email, password;
 	private String editFirstName, editLastName, editDay, editMonth, editYear, editCompany, editEmail, addFirstName, addLastName, addEmail, addCompany, addCountry, addState, addCity, addAddress1, addAddress2, addZipCode, addPhone, addFax, newPassword;
 	private String productReview, titleReview, contentsReview;
+	private HomePageObject homePage;
+	private LoginPageObject loginPage;
+	private MyAccountPageObject myAccountPage;
+	private SoftwarePageObject softwarePage;
+	private ProductPageObject productPage;
+	private ProductReviewPageObject productReviewPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -65,7 +56,7 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 
 		log.info("Pre-conditions: Login to the System and go to My Account page");
 
-		homePage.clickToNopCommerceHeaderLinkByName(driver, "Log in");
+		homePage.clickToNopCommerceHeaderLinkByText(driver, "Log in");
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 		loginPage.inputToEmailTextbox(email);
 		loginPage.inputToPasswordTextbox(password);
@@ -76,7 +67,7 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 
 	@BeforeMethod
 	public void beforeMethod() {
-		homePage.clickToNopCommerceHeaderLinkByName(driver, "My account");
+		homePage.clickToNopCommerceHeaderLinkByText(driver, "My account");
 		myAccountPage = PageGeneratorManager.getMyAccountPage(driver);
 	}
 
@@ -94,7 +85,7 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 		myAccountPage.inputToNopCommerceTextBoxByID(driver, "Company", editCompany);
 
 		log.info("TC_01_UpdateCustomerInfor - Step 02: Click Save button");
-		myAccountPage.clickToNopCommerceButtonByValue(driver, "Save");
+		myAccountPage.clickToNopCommerceButtonByValue(driver, "buttons", "Save");
 
 		log.info("TC_01_UpdateCustomerInfor - Step 03: Verify result after editing data");
 		verifyTrue(myAccountPage.isNopCommerceRadioButtonSelectedByID(driver, "gender-female"));
@@ -115,7 +106,7 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 		myAccountPage.clickToNopCommerceListBoxMenuByName(driver, "Addresses");
 
 		log.info("TC_02_AddAddress - Step 02: Click to 'Add new' button and input Address infor");
-		myAccountPage.clickToNopCommerceAddButtonByValue(driver, "Add new");
+		myAccountPage.clickToNopCommerceButtonByValue(driver, "add-button", "Add new");
 		myAccountPage.inputToNopCommerceTextBoxByID(driver, "Address_FirstName", addFirstName);
 		myAccountPage.inputToNopCommerceTextBoxByID(driver, "Address_LastName", addLastName);
 		myAccountPage.inputToNopCommerceTextBoxByID(driver, "Address_Email", addEmail);
@@ -132,7 +123,7 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 		myAccountPage.inputToNopCommerceTextBoxByID(driver, "Address_FaxNumber", addFax);
 
 		log.info("TC_02_AddAddress - Step 03: Click Save button");
-		myAccountPage.clickToNopCommerceButtonByValue(driver, "Save");
+		myAccountPage.clickToNopCommerceButtonByValue(driver, "buttons", "Save");
 
 		log.info("TC_02_AddAddress - Step 04: Verify Address infor are saved successfully");
 		verifyTrue(myAccountPage.isAddressAccountInfoDisplayedByClass("name", addFirstName + " " + addLastName));
@@ -159,17 +150,17 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 		myAccountPage.inputToNopCommerceTextBoxByID(driver, "ConfirmNewPassword", newPassword);
 
 		log.info("TC_03_ChangePassword - Step 03: Click to 'Change password' button");
-		myAccountPage.clickToNopCommerceButtonByValue(driver, "Change password");
+		myAccountPage.clickToNopCommerceButtonByValue(driver, "buttons", "Change password");
 
 		log.info("TC_03_ChangePassword - Step 04: Verify message displayed after changing password successfully");
 		verifyEquals(myAccountPage.getNopCommerceTextByClass(driver, "result"), "Password was changed");
 
 		log.info("TC_03_ChangePassword - Step 05: Click Log out button");
-		myAccountPage.clickToNopCommerceHeaderLinkByName(driver, "Log out");
+		myAccountPage.clickToNopCommerceHeaderLinkByText(driver, "Log out");
 		homePage = PageGeneratorManager.getHomePage(driver);
 
 		log.info("TC_03_ChangePassword - Step 06: Log in into the system with old password and verify Error message displays");
-		homePage.clickToNopCommerceHeaderLinkByName(driver, "Log in");
+		homePage.clickToNopCommerceHeaderLinkByText(driver, "Log in");
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 
 		loginPage.inputToEmailTextbox(editEmail);
@@ -180,7 +171,7 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 		verifyTrue(loginPage.isResultErrorMsgByClassDisplayed("message-error", "The credentials provided are incorrect"));
 
 		log.info("TC_03_ChangePassword - Step 07: Log in into the system with password which is change and verify log in successfully");
-		loginPage.clickToNopCommerceHeaderLinkByName(driver, "Log in");
+		loginPage.clickToNopCommerceHeaderLinkByText(driver, "Log in");
 		loginPage.inputToEmailTextbox(editEmail);
 		loginPage.inputToPasswordTextbox(newPassword);
 		loginPage.clickToLoginButton();
@@ -192,7 +183,7 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 	public void TC_04_AddReviewProduct() {
 		log.info("TC_04_AddReviewProduct - Step 01: Click to Sub Menu");
 		myAccountPage.clickToNopCommerceSubMenuByText(driver, "Computers ", "Software ");
-		softwarePage = PageGeneratorManager.getHeaderSoftwarePage(driver);
+		softwarePage = PageGeneratorManager.getSoftwarePage(driver);
 
 		log.info("TC_04_AddReviewProduct - Step 02: Click to Product link");
 		softwarePage.clickToNopCommerceLinkByClass(driver, "product-item", productReview);
@@ -208,13 +199,13 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 		productReviewPage.clickToRadioButtonByID(driver, "addproductrating_4");
 
 		log.info("TC_04_AddReviewProduct - Step 05: Click to 'Submit review' button");
-		productReviewPage.clickToNopCommerceButtonByValue(driver, "Submit review");
+		productReviewPage.clickToNopCommerceButtonByValue(driver, "buttons", "Submit review");
 
 		log.info("TC_04_AddReviewProduct - Step 06: Verify Submit review successfully");
 		verifyEquals(productReviewPage.getNopCommerceTextByClass(driver, "result"), "Product review is successfully added.");
 
 		log.info("TC_04_AddReviewProduct - Step 07: Click to 'My account' link");
-		productReviewPage.clickToNopCommerceHeaderLinkByName(driver, "My account");
+		productReviewPage.clickToNopCommerceHeaderLinkByText(driver, "My account");
 		myAccountPage = PageGeneratorManager.getMyAccountPage(driver);
 
 		log.info("TC_04_AddReviewProduct - Step 08: Click to 'My product reviews' List menu");
@@ -231,12 +222,5 @@ public class MyAccount_01_EditAccount extends AbstractTest {
 	public void afterClass() {
 		closeBrowserAndDriver(driver);
 	}
-
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
-	private MyAccountPageObject myAccountPage;
-	private HeaderSoftwarePageObject softwarePage;
-	private ProductPageObject productPage;
-	private ProductReviewPageObject productReviewPage;
 
 }

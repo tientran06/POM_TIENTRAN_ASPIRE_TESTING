@@ -1,23 +1,22 @@
 package com.nopcommerce.common;
 
 import commons.AbstractTest;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import pageObjects.nopcommerce.HomePageObject;
 import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.RegisterPageObject;
 
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-import org.openqa.selenium.WebDriver;
-
 public class Common_01_RegisterUser extends AbstractTest {
+	public static String email, password, firstName, lastName;
 	private WebDriver driver;
-	public static String email, password;
-	private String firstName, lastName, day, month, year, company, confirmPassWord;
+	private String day, month, year, company, confirmPassWord;
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 
-	@Parameters({ "browser"})
+	@Parameters({ "browser" })
 	@BeforeSuite
 	public void createUser(@Optional("chrome") String browserName) {
 		driver = getBrowserDriver(browserName);
@@ -33,7 +32,7 @@ public class Common_01_RegisterUser extends AbstractTest {
 		year = "1980";
 		homePage = PageGeneratorManager.getHomePage(driver);
 		registerPage = homePage.clickToRegisterLink();
-		
+
 		registerPage.clickToGenderRadioByID("gender-male");
 		registerPage.inputToFirstNameTextbox(firstName);
 		registerPage.inputToLastNameTextbox(lastName);
@@ -48,7 +47,7 @@ public class Common_01_RegisterUser extends AbstractTest {
 		registerPage.clickToSubmitButton();
 
 		verifyTrue(registerPage.isRegisterSuccessMsgDisplayed("Your registration completed"));
-		registerPage.clickToNopCommerceHeaderLinkByName(driver, "Log out");
+		registerPage.clickToNopCommerceHeaderLinkByText(driver, "Log out");
 		driver.quit();
 	}
 }

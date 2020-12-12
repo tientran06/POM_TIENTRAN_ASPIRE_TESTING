@@ -1,11 +1,10 @@
 package pageObjects.nopcommerce;
 
-import org.openqa.selenium.WebDriver;
-
 import commons.AbstractPage;
+import org.openqa.selenium.WebDriver;
 import pageUIs.nopcommerce.HomePageUI;
 
-public class HomePageObject extends AbstractPage{
+public class HomePageObject extends AbstractPage {
 	WebDriver driver;
 
 	public HomePageObject(WebDriver _driver) {

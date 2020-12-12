@@ -13,9 +13,7 @@
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.nopcommerce.common.Common_01_RegisterUser"/>
-      <class name="com.nopcommerce.login.Login_01_Register"/>
-      <class name="com.nopcommerce.login.Login_02_Login"/>
-      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
+      <class name="com.nopcommerce.others.Others_03_WishlistAndCompare"/>
     </classes>
   </test> <!-- Run on CHROME -->
 </suite> <!-- Failed suite [Nop Commerce] -->

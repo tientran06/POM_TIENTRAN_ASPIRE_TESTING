@@ -3,21 +3,23 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
+      <class name="com.nopcommerce.others.Others_03_WishlistAndCompare"/>
     </classes>
   </test> <!-- Default test -->
   <test name="Default test(failed)">
     <classes>
-      <class name="com.nopcommerce.myaccount.MyAccount_01_EditAccount">
+      <class name="com.nopcommerce.others.Others_03_WishlistAndCompare">
         <methods>
-          <include name="TC_01_Update_Customer_Infor"/>
-          <include name="TC_04_Add_Review_Product"/>
-          <include name="beforeTest"/>
-          <include name="TC_02_Add_Address"/>
-          <include name="TC_03_Change_Password"/>
-          <include name="afterTest"/>
+          <include name="TC_04_AddProductToCompareAndClearList"/>
+          <include name="TC_05_RecentlyViewedProducts"/>
+          <include name="beforeClass"/>
+          <include name="TC_03_RemoveProductInWishlistPage"/>
+          <include name="TC_01_AddToWishlist"/>
+          <include name="TC_06_AddProductToCompareAndRemove"/>
+          <include name="TC_02_AddProductToCartFromWishlistPage"/>
+          <include name="afterClass"/>
         </methods>
-      </class> <!-- com.nopcommerce.myaccount.MyAccount_01_EditAccount -->
+      </class> <!-- com.nopcommerce.others.Others_03_WishlistAndCompare -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

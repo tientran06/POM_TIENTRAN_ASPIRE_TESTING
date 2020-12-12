@@ -1,28 +1,22 @@
-package com.nopcommerce.search;
-
-import org.testng.annotations.Test;
+package com.nopcommerce.others;
 
 import com.nopcommerce.common.Common_01_RegisterUser;
-
 import commons.AbstractTest;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 import pageObjects.nopcommerce.HomePageObject;
 import pageObjects.nopcommerce.LoginPageObject;
 import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.SearchPageObject;
 
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-
-public class Search_01_SearchData extends AbstractTest {
+public class Others_02_SearchData extends AbstractTest {
 
 	private WebDriver driver;
 	private String email, password;
 	private String comparativeProduct, productName, productName1, category, incorrectManufacturer, correctManufacturer;
+	private HomePageObject homePage;
+	private LoginPageObject loginPage;
+	private SearchPageObject searchPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -42,7 +36,7 @@ public class Search_01_SearchData extends AbstractTest {
 
 		log.info("Pre-conditions: Login to the System and go to My Account page");
 
-		homePage.clickToNopCommerceHeaderLinkByName(driver, "Log in");
+		homePage.clickToNopCommerceHeaderLinkByText(driver, "Log in");
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 		loginPage.inputToEmailTextbox(email);
 		loginPage.inputToPasswordTextbox(password);
@@ -64,7 +58,7 @@ public class Search_01_SearchData extends AbstractTest {
 		searchPage.inputToNopCommerceTextBoxByID(driver, "q", "");
 
 		log.info("TC_01_SearchWithEmptyData - Step 02: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_01_SearchWithEmptyData - Step 03: Verify Error message displays");
 		verifyEquals(searchPage.getNopCommerceTextByClass(driver, "warning"), "Search term minimum length is 3 characters");
@@ -77,7 +71,7 @@ public class Search_01_SearchData extends AbstractTest {
 		searchPage.inputToNopCommerceTextBoxByID(driver, "q", "Macbook Pro 2050");
 
 		log.info("TC_02_SearchWithNotExistData - Step 02: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_02_SearchWithNotExistData - Step 03: Verify displayed result - No result");
 		verifyEquals(searchPage.getNopCommerceTextByClass(driver, "no-result"), "No products were found that matched your criteria.");
@@ -90,7 +84,7 @@ public class Search_01_SearchData extends AbstractTest {
 		searchPage.inputToNopCommerceTextBoxByID(driver, "q", comparativeProduct);
 
 		log.info("TC_03_SearchWithProductNameRelative - Step 02: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_03_SearchWithProductNameRelative - Step 03: Verify displayed result - 2 related Products");
 		log.info("Total product is found: ---------------" + searchPage.getNopCommerceQtyProductByText(driver, "Lenovo"));
@@ -104,7 +98,7 @@ public class Search_01_SearchData extends AbstractTest {
 		searchPage.inputToNopCommerceTextBoxByID(driver, "q", productName);
 
 		log.info("TC_04_SearchWithProductNameAbsolutely - Step 02: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_04_SearchWithProductNameAbsolutely - Step 03: Verify displayed result - 1 Product");
 		log.info("Total product is found: ---------------" + searchPage.getNopCommerceQtyProductByText(driver, productName));
@@ -122,7 +116,7 @@ public class Search_01_SearchData extends AbstractTest {
 		searchPage.selectNopCommerceDropdownListByName(driver, "cid", category);
 
 		log.info("TC_05_AdvancedSearchWithParentCategories - Step 03: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_05_AdvancedSearchWithParentCategories - Step 04: Verify displayed result - No result");
 		verifyEquals(searchPage.getNopCommerceTextByClass(driver, "no-result"), "No products were found that matched your criteria.");
@@ -141,7 +135,7 @@ public class Search_01_SearchData extends AbstractTest {
 		searchPage.checkOnNopCommerceCheckboxByID(driver, "isc");
 
 		log.info("TC_06_AdvancedSearchWithSubCategories - Step 04: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_06_AdvancedSearchWithSubCategories - Step 05: Verify displayed result - 1 Product");
 		log.info("Total product is found: ---------------" + searchPage.getNopCommerceQtyProductByText(driver, productName1));
@@ -164,7 +158,7 @@ public class Search_01_SearchData extends AbstractTest {
 		searchPage.selectNopCommerceDropdownListByName(driver, "mid", incorrectManufacturer);
 
 		log.info("TC_07_AdvancedSearchWithIncorrectManufacturer - Step 05: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_07_AdvancedSearchWithIncorrectManufacturer - Step 06: Verify displayed result - No result");
 		verifyEquals(searchPage.getNopCommerceTextByClass(driver, "no-result"), "No products were found that matched your criteria.");
@@ -186,7 +180,7 @@ public class Search_01_SearchData extends AbstractTest {
 		searchPage.selectNopCommerceDropdownListByName(driver, "mid", correctManufacturer);
 
 		log.info("TC_08_AdvancedSearchWithCorrectManufacturer - Step 05: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_08_AdvancedSearchWithCorrectManufacturer - Step 06: Verify displayed result - 1 Product");
 		log.info("Total product is found: ---------------" + searchPage.getNopCommerceQtyProductByText(driver, productName1));
@@ -207,13 +201,13 @@ public class Search_01_SearchData extends AbstractTest {
 
 		log.info("TC_09_AdvancedSearchInPriceRange - Step 04: Select incorrect 'Manufacturer'");
 		searchPage.selectNopCommerceDropdownListByName(driver, "mid", correctManufacturer);
-		
+
 		log.info("TC_09_AdvancedSearchInPriceRange - Step 05: Input Price in range value");
 		searchPage.inputToNopCommerceTextBoxByID(driver, "pf", "1000");
 		searchPage.inputToNopCommerceTextBoxByID(driver, "pt", "2000");
 
 		log.info("TC_09_AdvancedSearchInPriceRange - Step 06: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_09_AdvancedSearchInPriceRange - Step 07: Verify displayed result - 1 Product");
 		log.info("Total product is found: ---------------" + searchPage.getNopCommerceQtyProductByText(driver, productName1));
@@ -234,13 +228,13 @@ public class Search_01_SearchData extends AbstractTest {
 
 		log.info("TC_10_AdvancedSearchWithPriceRangeLessThanProductPrice - Step 04: Select incorrect 'Manufacturer'");
 		searchPage.selectNopCommerceDropdownListByName(driver, "mid", correctManufacturer);
-		
+
 		log.info("TC_10_AdvancedSearchWithPriceRangeLessThanProductPrice - Step 05: Input Price range less than Product price");
 		searchPage.inputToNopCommerceTextBoxByID(driver, "pf", "1000");
 		searchPage.inputToNopCommerceTextBoxByID(driver, "pt", "1700");
 
 		log.info("TC_10_AdvancedSearchWithPriceRangeLessThanProductPrice - Step 06: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_10_AdvancedSearchWithPriceRangeLessThanProductPrice - Step 07: Verify displayed result - No Product");
 		verifyEquals(searchPage.getNopCommerceTextByClass(driver, "no-result"), "No products were found that matched your criteria.");
@@ -260,13 +254,13 @@ public class Search_01_SearchData extends AbstractTest {
 
 		log.info("TC_11_AdvancedSearchWithPriceRangeMoreThanProductPrice - Step 04: Select incorrect 'Manufacturer'");
 		searchPage.selectNopCommerceDropdownListByName(driver, "mid", correctManufacturer);
-		
+
 		log.info("TC_11_AdvancedSearchWithPriceRangeMoreThanProductPrice - Step 05: Input Price range less than Product price");
 		searchPage.inputToNopCommerceTextBoxByID(driver, "pf", "1900");
 		searchPage.inputToNopCommerceTextBoxByID(driver, "pt", "5000");
 
 		log.info("TC_11_AdvancedSearchWithPriceRangeMoreThanProductPrice - Step 06: Click Search button");
-		searchPage.clickToNopCommerceButtonByValue(driver, "Search");
+		searchPage.clickToNopCommerceButtonByValue(driver, "buttons", "Search");
 
 		log.info("TC_11_AdvancedSearchWithPriceRangeMoreThanProductPrice - Step 07: Verify displayed result - No Product");
 		verifyEquals(searchPage.getNopCommerceTextByClass(driver, "no-result"), "No products were found that matched your criteria.");
@@ -276,9 +270,5 @@ public class Search_01_SearchData extends AbstractTest {
 	public void afterClass() {
 		closeBrowserAndDriver(driver);
 	}
-
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
-	private SearchPageObject searchPage;
 
 }

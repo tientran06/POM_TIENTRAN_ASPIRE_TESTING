@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/4</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/6</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Nov 28 14:28:10 ICT 2020</td>
+<td>Started on:</td><td>Sat Dec 12 16:00:05 ICT 2020</td>
 </tr>
-<tr><td>Total time:</td><td>14 seconds (14586 ms)</td>
+<tr><td>Total time:</td><td>13 seconds (13414 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,12 +75,20 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.nopcommerce.myaccount.MyAccount_01_EditAccount.beforeTest()'><b>beforeTest</b><br>Test class: com.nopcommerce.myaccount.MyAccount_01_EditAccount<br>Parameters: chrome</td>
+<td title='com.nopcommerce.others.Others_03_WishlistAndCompare.beforeClass()'><b>beforeClass</b><br>Test class: com.nopcommerce.others.Others_03_WishlistAndCompare<br>Parameters: chrome<br/>
+<a href="#Output-1217207511" onClick='toggleBox("Output-1217207511", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1217207511" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1217207511">
+2020-12-12 16:00:15,965 INFO  com.nopcommerce.others.Others_03_WishlistAndCompare - Pre-conditions: Login to the System and go to My Account page
+<br/>
+</div>
+</td>
 <td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
-	at commons.AbstractPage.sendKeyToElement(AbstractPage.java:117)
-	at pageObjects.nopcommerce.LoginPageObject.inputToEmailTextbox(LoginPageObject.java:17)
-	at com.nopcommerce.myaccount.MyAccount_01_EditAccount.beforeTest(MyAccount_01_EditAccount.java:60)
+	at commons.AbstractPage.sendKeyToElement(AbstractPage.java:111)
+	at pageObjects.nopcommerce.LoginPageObject.inputToEmailTextbox(LoginPageObject.java:16)
+	at com.nopcommerce.others.Others_03_WishlistAndCompare.beforeClass(Others_03_WishlistAndCompare.java:49)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -89,8 +97,10 @@ function toggleAllBoxes() {
 	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:656)
-	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:178)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
 	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
@@ -103,12 +113,12 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2027317551", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2027317551'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+</pre></div><a href='#' onClick='toggleBox("stack-trace1217207511", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1217207511'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
-	at commons.AbstractPage.sendKeyToElement(AbstractPage.java:117)
-	at pageObjects.nopcommerce.LoginPageObject.inputToEmailTextbox(LoginPageObject.java:17)
-	at com.nopcommerce.myaccount.MyAccount_01_EditAccount.beforeTest(MyAccount_01_EditAccount.java:60)
+	at commons.AbstractPage.sendKeyToElement(AbstractPage.java:111)
+	at pageObjects.nopcommerce.LoginPageObject.inputToEmailTextbox(LoginPageObject.java:16)
+	at com.nopcommerce.others.Others_03_WishlistAndCompare.beforeClass(Others_03_WishlistAndCompare.java:49)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -117,8 +127,78 @@ function toggleAllBoxes() {
 	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:514)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:215)
 	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:656)
-	at org.testng.TestRunner.run(TestRunner.java:624)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:178)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>0</td>
+<td>com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.nopcommerce.others.Others_03_WishlistAndCompare.beforeMethod()'><b>beforeMethod</b><br>Test class: com.nopcommerce.others.Others_03_WishlistAndCompare</td>
+<td></td>
+<td>0</td>
+<td>com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.nopcommerce.others.Others_03_WishlistAndCompare.TC_01_AddToWishlist()'><b>TC_01_AddToWishlist</b><br>Test class: com.nopcommerce.others.Others_03_WishlistAndCompare</td>
+<td></td>
+<td>0</td>
+<td>com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b</td></tr>
+<tr>
+<td title='com.nopcommerce.others.Others_03_WishlistAndCompare.TC_02_AddProductToCartFromWishlistPage()'><b>TC_02_AddProductToCartFromWishlistPage</b><br>Test class: com.nopcommerce.others.Others_03_WishlistAndCompare</td>
+<td><div><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_02_AddProductToCartFromWishlistPage()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1574898980", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1574898980'><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_02_AddProductToCartFromWishlistPage()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
 	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
 	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
@@ -134,34 +214,174 @@ function toggleAllBoxes() {
 </pre></div></td>
 <td>0</td>
 <td>null</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
 <tr>
-<td title='com.nopcommerce.myaccount.MyAccount_01_EditAccount.TC_01_Update_Customer_Infor()'><b>TC_01_Update_Customer_Infor</b><br>Test class: com.nopcommerce.myaccount.MyAccount_01_EditAccount</td>
-<td></td>
+<td title='com.nopcommerce.others.Others_03_WishlistAndCompare.TC_03_RemoveProductInWishlistPage()'><b>TC_03_RemoveProductInWishlistPage</b><br>Test class: com.nopcommerce.others.Others_03_WishlistAndCompare</td>
+<td><div><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_03_RemoveProductInWishlistPage()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1619356001", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1619356001'><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_03_RemoveProductInWishlistPage()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
 <td>0</td>
-<td>com.nopcommerce.myaccount.MyAccount_01_EditAccount@887af79</td></tr>
+<td>null</td></tr>
 <tr>
-<td title='com.nopcommerce.myaccount.MyAccount_01_EditAccount.TC_02_Add_Address()'><b>TC_02_Add_Address</b><br>Test class: com.nopcommerce.myaccount.MyAccount_01_EditAccount</td>
-<td></td>
+<td title='com.nopcommerce.others.Others_03_WishlistAndCompare.TC_04_AddProductToCompareAndClearList()'><b>TC_04_AddProductToCompareAndClearList</b><br>Test class: com.nopcommerce.others.Others_03_WishlistAndCompare</td>
+<td><div><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_04_AddProductToCompareAndClearList()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace172678484", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace172678484'><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_04_AddProductToCompareAndClearList()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
 <td>0</td>
-<td>com.nopcommerce.myaccount.MyAccount_01_EditAccount@887af79</td></tr>
+<td>null</td></tr>
 <tr>
-<td title='com.nopcommerce.myaccount.MyAccount_01_EditAccount.TC_03_Change_Password()'><b>TC_03_Change_Password</b><br>Test class: com.nopcommerce.myaccount.MyAccount_01_EditAccount</td>
-<td></td>
+<td title='com.nopcommerce.others.Others_03_WishlistAndCompare.TC_05_RecentlyViewedProducts()'><b>TC_05_RecentlyViewedProducts</b><br>Test class: com.nopcommerce.others.Others_03_WishlistAndCompare</td>
+<td><div><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_05_RecentlyViewedProducts()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1604052588", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1604052588'><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_05_RecentlyViewedProducts()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
 <td>0</td>
-<td>com.nopcommerce.myaccount.MyAccount_01_EditAccount@887af79</td></tr>
+<td>null</td></tr>
 <tr>
-<td title='com.nopcommerce.myaccount.MyAccount_01_EditAccount.TC_04_Add_Review_Product()'><b>TC_04_Add_Review_Product</b><br>Test class: com.nopcommerce.myaccount.MyAccount_01_EditAccount</td>
-<td></td>
+<td title='com.nopcommerce.others.Others_03_WishlistAndCompare.TC_06_AddProductToCompareAndRemove()'><b>TC_06_AddProductToCompareAndRemove</b><br>Test class: com.nopcommerce.others.Others_03_WishlistAndCompare</td>
+<td><div><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_06_AddProductToCompareAndRemove()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1724256292", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1724256292'><pre>java.lang.Throwable: Method Others_03_WishlistAndCompare.TC_06_AddProductToCompareAndRemove()[pri:0, instance:com.nopcommerce.others.Others_03_WishlistAndCompare@7fac631b] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1037)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:782)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+	at org.testng.TestNG.run(TestNG.java:1064)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
 <td>0</td>
-<td>com.nopcommerce.myaccount.MyAccount_01_EditAccount@887af79</td></tr>
+<td>null</td></tr>
 </table><p>
 </body>
 </html>

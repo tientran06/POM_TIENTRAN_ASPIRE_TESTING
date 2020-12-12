@@ -5,14 +5,16 @@
            errors="0"
            skipped="0"
            time="14.206">
-  <properties />
-  
-  
-            <testcase name="TC_02_RegisterWithInvalidEmail" time="1.891" classname="com.nopcommerce.login.Login_01_Register_01" />
-                <testcase name="TC_03_RegisterWithExistEmail" time="3.214" classname="com.nopcommerce.login.Login_01_Register_01" />
-                <testcase name="TC_05_RegisterWithInvalidConfirmPass" time="1.597" classname="com.nopcommerce.login.Login_01_Register_01" />
-                <testcase name="TC_04_RegisterWithInvalidPass" time="1.644" classname="com.nopcommerce.login.Login_01_Register_01" />
-                <testcase name="TC_01_RegisterWithEmptyData" time="1.606" classname="com.nopcommerce.login.Login_01_Register_01" />
-                <testcase name="TC_06_RegisterToSystem" time="4.254" classname="com.nopcommerce.login.Login_01_Register_01" />
-      
+    <properties/>
+
+
+    <testcase name="TC_02_RegisterWithInvalidEmail" time="1.891"
+              classname="com.nopcommerce.login.Login_01_Register_01"/>
+    <testcase name="TC_03_RegisterWithExistEmail" time="3.214" classname="com.nopcommerce.login.Login_01_Register_01"/>
+    <testcase name="TC_05_RegisterWithInvalidConfirmPass" time="1.597"
+              classname="com.nopcommerce.login.Login_01_Register_01"/>
+    <testcase name="TC_04_RegisterWithInvalidPass" time="1.644" classname="com.nopcommerce.login.Login_01_Register_01"/>
+    <testcase name="TC_01_RegisterWithEmptyData" time="1.606" classname="com.nopcommerce.login.Login_01_Register_01"/>
+    <testcase name="TC_06_RegisterToSystem" time="4.254" classname="com.nopcommerce.login.Login_01_Register_01"/>
+
 </testsuite>

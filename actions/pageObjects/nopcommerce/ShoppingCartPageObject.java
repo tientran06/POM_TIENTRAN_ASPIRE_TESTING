@@ -3,10 +3,10 @@ package pageObjects.nopcommerce;
 import commons.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
-public class ProductPageObject extends AbstractPage {
+public class ShoppingCartPageObject extends AbstractPage {
 	WebDriver driver;
 
-	public ProductPageObject(WebDriver _driver) {
+	public ShoppingCartPageObject(WebDriver _driver) {
 		driver = _driver;
 	}
 

@@ -21,8 +21,32 @@ public class PageGeneratorManager {
 		return new MyAccountPageObject(driver);
 	}
 
-	public static HeaderSoftwarePageObject getHeaderSoftwarePage(WebDriver driver) {
-		return new HeaderSoftwarePageObject(driver);
+	public static SoftwarePageObject getSoftwarePage(WebDriver driver) {
+		return new SoftwarePageObject(driver);
+	}
+
+	public static NoteBooksPageObject getNoteBooksPage(WebDriver driver) {
+		return new NoteBooksPageObject(driver);
+	}
+
+	public static WishListPageObject getWishListPage(WebDriver driver) {
+		return new WishListPageObject(driver);
+	}
+
+	public static ShoppingCartPageObject getShoppingCartPage(WebDriver driver) {
+		return new ShoppingCartPageObject(driver);
+	}
+
+	public static CellPhonePageObject getCellPhonePage(WebDriver driver) {
+		return new CellPhonePageObject(driver);
+	}
+
+	public static CameraAndPhotoPageObject getCameraAndPhotoPage(WebDriver driver) {
+		return new CameraAndPhotoPageObject(driver);
+	}
+
+	public static CompareProductsListPageObject getCompareProductsListPage(WebDriver driver) {
+		return new CompareProductsListPageObject(driver);
 	}
 
 	public static ProductPageObject getProductPage(WebDriver driver) {
@@ -32,6 +56,7 @@ public class PageGeneratorManager {
 	public static ProductReviewPageObject getProductReviewPage(WebDriver driver) {
 		return new ProductReviewPageObject(driver);
 	}
+
 	public static SearchPageObject getSearchPage(WebDriver driver) {
 		return new SearchPageObject(driver);
 	}

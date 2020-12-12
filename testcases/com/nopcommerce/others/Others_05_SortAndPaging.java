@@ -1,26 +1,19 @@
-package com.nopcommerce.addto;
-
-import org.testng.annotations.Test;
+package com.nopcommerce.others;
 
 import com.nopcommerce.common.Common_01_RegisterUser;
-
 import commons.AbstractTest;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 import pageObjects.nopcommerce.HomePageObject;
 import pageObjects.nopcommerce.LoginPageObject;
 import pageObjects.nopcommerce.PageGeneratorManager;
 
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-
-public class AddTo_01_AddTo extends AbstractTest {
+public class Others_05_SortAndPaging extends AbstractTest {
 
 	private WebDriver driver;
 	private String email, password;
+	private HomePageObject homePage;
+	private LoginPageObject loginPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -33,7 +26,7 @@ public class AddTo_01_AddTo extends AbstractTest {
 
 		log.info("Pre-conditions: Login to the System and go to My Account page");
 
-		homePage.clickToNopCommerceHeaderLinkByName(driver, "Log in");
+		homePage.clickToNopCommerceHeaderLinkByText(driver, "Log in");
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 		loginPage.inputToEmailTextbox(email);
 		loginPage.inputToPasswordTextbox(password);
@@ -49,37 +42,37 @@ public class AddTo_01_AddTo extends AbstractTest {
 	}
 
 	@Test()
-	public void TC_01_AddProdcutToCart() {
+	public void TC_01_SortWithNameAccending() {
 
 	}
 
 	@Test()
-	public void TC_02_EditProductInShoppingCart() {
+	public void TC_02_SortWithNameDescending() {
 
 	}
 
 	@Test()
-	public void TC_03_RemoveFromCart() {
+	public void TC_03_SortWithPriceLowToHigh() {
 
 	}
 
 	@Test()
-	public void TC_04_UpdateShoppingCart() {
+	public void TC_04_SortWithPriceHighToLow() {
 
 	}
 
 	@Test()
-	public void TC_05_CheckOutOrder() {
+	public void TC_05_DisplayWith3ProductFor1Page() {
 
 	}
 
 	@Test()
-	public void TC_06_CheckOutOrder() {
+	public void TC_06_DisplayWith6ProductFor1Page() {
 
 	}
 
 	@Test()
-	public void TC_07_ReOrder() {
+	public void TC_07_DisplayWith9ProductFor1Page() {
 
 	}
 
@@ -87,8 +80,5 @@ public class AddTo_01_AddTo extends AbstractTest {
 	public void afterClass() {
 		closeBrowserAndDriver(driver);
 	}
-
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
 
 }

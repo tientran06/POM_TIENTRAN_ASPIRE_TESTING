@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Run on CHROME"
+<testsuite name="Run on FIREFOX"
            tests="6"
            failures="0"
            errors="0"
            skipped="0"
-           time="13.721">
-  <properties />
-  
-  
-            <testcase name="TC_03_RegisterWithExistEmail" time="2.887" classname="com.nopcommerce.login.Login_01_Register" />
-                <testcase name="TC_04_RegisterWithInvalidPass" time="1.678" classname="com.nopcommerce.login.Login_01_Register" />
-                <testcase name="TC_02_RegisterWithInvalidEmail" time="1.628" classname="com.nopcommerce.login.Login_01_Register" />
-                <testcase name="TC_06_RegisterToSystem" time="4.352" classname="com.nopcommerce.login.Login_01_Register" />
-                <testcase name="TC_05_RegisterWithInvalidConfirmPass" time="1.499" classname="com.nopcommerce.login.Login_01_Register" />
-                <testcase name="TC_01_RegisterWithEmptyData" time="1.677" classname="com.nopcommerce.login.Login_01_Register" />
-      
+           time="17.120">
+    <properties/>
+
+
+    <testcase name="TC_04_RegisterWithInvalidPass" time="2.300" classname="com.nopcommerce.login.Login_01_Register"/>
+    <testcase name="TC_01_RegisterWithEmptyData" time="1.592" classname="com.nopcommerce.login.Login_01_Register"/>
+    <testcase name="TC_03_RegisterWithExistEmail" time="3.315" classname="com.nopcommerce.login.Login_01_Register"/>
+    <testcase name="TC_02_RegisterWithInvalidEmail" time="2.160" classname="com.nopcommerce.login.Login_01_Register"/>
+    <testcase name="TC_06_RegisterToSystem" time="5.131" classname="com.nopcommerce.login.Login_01_Register"/>
+    <testcase name="TC_05_RegisterWithInvalidConfirmPass" time="2.622"
+              classname="com.nopcommerce.login.Login_01_Register"/>
+
 </testsuite>

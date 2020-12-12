@@ -1,8 +1,7 @@
 package pageObjects.nopcommerce;
 
-import org.openqa.selenium.WebDriver;
-
 import commons.AbstractPage;
+import org.openqa.selenium.WebDriver;
 import pageUIs.nopcommerce.MyAccountPageUI;
 import pageUIs.nopcommerce.ProductReviewPageUI;
 

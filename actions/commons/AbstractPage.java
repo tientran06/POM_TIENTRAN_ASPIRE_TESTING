@@ -1,25 +1,19 @@
 package commons;
 
-import java.awt.Robot;
-import java.awt.Toolkit;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pageUIs.nopcommerce.AbstractPageNopCommerceUI;
+
+import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import pageUIs.nopcommerce.AbstractPageNopCommerceUI;
 
 public class AbstractPage {
 	private WebDriverWait waitExplicit;
@@ -732,9 +726,20 @@ public class AbstractPage {
 
 	// **************** Common Methods of NOP COMMERCE ************************** //
 
-	public void clickToNopCommerceHeaderLinkByName(WebDriver driver, String pageName) {
+	public void clickToNopCommerceHomePage(WebDriver driver) {
+		waitForElementClickable(driver, AbstractPageNopCommerceUI.HOMEPAGE_LOGO);
+		clickToElement(driver, AbstractPageNopCommerceUI.HOMEPAGE_LOGO);
+
+	}
+
+	public void clickToNopCommerceHeaderLinkByText(WebDriver driver, String pageName) {
 		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_LINK, pageName);
 		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_LINK, pageName);
+	}
+
+	public void clickToNopCommerceHeaderOtherLinkByText(WebDriver driver, String pageName) {
+		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_OTHER_LINK, pageName);
+		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_HEADER_OTHER_LINK, pageName);
 	}
 
 	public void clickToNopCommerceHeaderMenuByText(WebDriver driver, String menuName) {
@@ -785,13 +790,9 @@ public class AbstractPage {
 		selectDefaultDropdownListByVisibleText(driver, AbstractPageNopCommerceUI.DYNAMIC_DROPDOWN_LIST, valueItem, dropdownName);
 	}
 
-	public void clickToNopCommerceButtonByValue(WebDriver driver, String buttonValue) {
-		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_BUTTON, buttonValue);
-		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_BUTTON, buttonValue);
-	}
-	public void clickToNopCommerceAddButtonByValue(WebDriver driver, String buttonValue) {
-		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_ADD_BUTTON, buttonValue);
-		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_ADD_BUTTON, buttonValue);
+	public void clickToNopCommerceButtonByValue(WebDriver driver, String classValue, String buttonValue) {
+		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_BUTTON, classValue, buttonValue);
+		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_BUTTON, classValue, buttonValue);
 	}
 
 	public boolean isNopCommerceRadioButtonSelectedByID(WebDriver driver, String idValue) {
@@ -827,6 +828,40 @@ public class AbstractPage {
 	public void checkOnNopCommerceCheckboxByID(WebDriver driver, String idValue) {
 		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_CHECKBOX, idValue);
 		checkTheCheckbox(driver, AbstractPageNopCommerceUI.DYNAMIC_CHECKBOX, idValue);
+	}
+
+	public boolean isNopCommerceBarNotificationDisplayed(WebDriver driver, String textValue, String linkTextValue) {
+		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_BAR_NOTIFICATION, textValue, linkTextValue);
+		return isElementDisplayed(driver, AbstractPageNopCommerceUI.DYNAMIC_BAR_NOTIFICATION, textValue, linkTextValue);
+	}
+
+	public String getNopCommerceProductNameByText(WebDriver driver, String productName) {
+		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_DETAIL, productName);
+		return getTextElement(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_DETAIL, productName);
+	}
+
+	public boolean isNopCommerceProductUndisplayed(WebDriver driver, String productName) {
+		waitForElementInvisible(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_DETAIL, productName);
+		return isElementUnDisplayed(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_DETAIL, productName);
+	}
+
+	public void clickToNopCommerceProductSubButtonByValue(WebDriver driver, String productName, String subButtonValue) {
+		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_SUB_BUTTON, productName, subButtonValue);
+		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_SUB_BUTTON, productName, subButtonValue);
+	}
+
+	public void backToNopCommercePreviousPage(WebDriver driver) {
+		back(driver);
+	}
+
+	public boolean isNopCommerceLinkDisplayedByClass(WebDriver driver, String classValue, String textValue) {
+		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
+		return isElementDisplayed(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
+	}
+
+	public boolean isNopCommerceLinkUnDisplayedByClass(WebDriver driver, String classValue, String textValue) {
+		waitForElementInvisible(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
+		return isElementUnDisplayed(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
 	}
 
 }

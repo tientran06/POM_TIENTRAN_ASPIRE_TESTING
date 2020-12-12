@@ -1,26 +1,19 @@
 package com.nopcommerce.login;
 
-import org.testng.annotations.Test;
-
 import com.nopcommerce.common.Common_01_RegisterUser;
-
 import commons.AbstractTest;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 import pageObjects.nopcommerce.HomePageObject;
 import pageObjects.nopcommerce.LoginPageObject;
 import pageObjects.nopcommerce.PageGeneratorManager;
-
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 public class Login_02_Login extends AbstractTest {
 
 	private WebDriver driver;
 	private String email, password;
+	private HomePageObject homePage;
+	private LoginPageObject loginPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -30,12 +23,12 @@ public class Login_02_Login extends AbstractTest {
 
 		email = Common_01_RegisterUser.email;
 		password = Common_01_RegisterUser.password;
-		
+
 	}
 
 	@BeforeMethod
 	public void beforeMethod() {
-		homePage.clickToNopCommerceHeaderLinkByName(driver, "Log in");
+		homePage.clickToNopCommerceHeaderLinkByText(driver, "Log in");
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 
 	}
@@ -132,8 +125,5 @@ public class Login_02_Login extends AbstractTest {
 	public void afterClass() {
 		closeBrowserAndDriver(driver);
 	}
-
-	private HomePageObject homePage;
-	private LoginPageObject loginPage;
 
 }

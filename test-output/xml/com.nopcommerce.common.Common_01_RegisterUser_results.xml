@@ -5,15 +5,15 @@
            errors="0"
            skipped="0"
            time="0.000">
-  <properties />
-            <testcase name="createUser" time="0.000" classname="com.nopcommerce.common.Common_01_RegisterUser">
-                <failure type="org.openqa.selenium.WebDriverException"
-                  message="java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:23510
+    <properties/>
+    <testcase name="createUser" time="0.000" classname="com.nopcommerce.common.Common_01_RegisterUser">
+        <failure type="org.openqa.selenium.WebDriverException"
+                 message="java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:23510
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:25:53&apos;
 System info: host: &apos;ADMIN&apos;, ip: &apos;192.168.44.112&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_251&apos;
 Driver info: driver.version: RemoteWebDriver"
-              >
-<![CDATA[org.openqa.selenium.WebDriverException: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:23510
+        >
+            <![CDATA[org.openqa.selenium.WebDriverException: java.net.ConnectException: Failed to connect to localhost/0:0:0:0:0:0:0:1:23510
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
 System info: host: 'ADMIN', ip: '192.168.44.112', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_251'
 Driver info: driver.version: RemoteWebDriver
@@ -138,10 +138,9 @@ Caused by: java.net.ConnectException: Connection refused: connect
   org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
   org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
-      </failure>
+        </failure>
 
-          </testcase>
-  
-  
-  
+    </testcase>
+
+
 </testsuite>

@@ -5,12 +5,14 @@
            errors="0"
            skipped="0"
            time="22.333">
-  <properties />
-  
-  
-            <testcase name="TC_04_AddReviewProduct" time="5.335" classname="com.nopcommerce.myaccount.MyAccount_01_EditAccount" />
-                <testcase name="TC_01_UpdateCustomerInfor" time="4.003" classname="com.nopcommerce.myaccount.MyAccount_01_EditAccount" />
-                <testcase name="TC_03_ChangePassword" time="7.263" classname="com.nopcommerce.myaccount.MyAccount_01_EditAccount" />
-                <testcase name="TC_02_AddAddress" time="5.732" classname="com.nopcommerce.myaccount.MyAccount_01_EditAccount" />
-      
+    <properties/>
+
+
+    <testcase name="TC_04_AddReviewProduct" time="5.335"
+              classname="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
+    <testcase name="TC_01_UpdateCustomerInfor" time="4.003"
+              classname="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
+    <testcase name="TC_03_ChangePassword" time="7.263" classname="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
+    <testcase name="TC_02_AddAddress" time="5.732" classname="com.nopcommerce.myaccount.MyAccount_01_EditAccount"/>
+
 </testsuite>

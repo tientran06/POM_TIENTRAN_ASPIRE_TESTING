@@ -1,26 +1,19 @@
 package com.nopcommerce.login;
 
-import org.testng.annotations.Test;
-
 import com.nopcommerce.common.Common_01_RegisterUser;
-
 import commons.AbstractTest;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.*;
 import pageObjects.nopcommerce.HomePageObject;
 import pageObjects.nopcommerce.PageGeneratorManager;
 import pageObjects.nopcommerce.RegisterPageObject;
-
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
-
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 public class Login_01_Register extends AbstractTest {
 
 	private WebDriver driver;
 	private String firstName, lastName, day, month, year, email, company, passWord, confirmPassWord, existEmail;
+	private HomePageObject homePage;
+	private RegisterPageObject registerPage;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -181,15 +174,12 @@ public class Login_01_Register extends AbstractTest {
 
 		log.info("TC_06_RegisterToSystem - Step 03: Verify successful message displays");
 		verifyTrue(registerPage.isRegisterSuccessMsgDisplayed("Your registration completed"));
-		registerPage.clickToNopCommerceHeaderLinkByName(driver, "Log out");
+		registerPage.clickToNopCommerceHeaderLinkByText(driver, "Log out");
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
 		closeBrowserAndDriver(driver);
 	}
-
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
 
 }

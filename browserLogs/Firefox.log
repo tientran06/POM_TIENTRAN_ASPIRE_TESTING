@@ -1,4 +1,4 @@
-1607194404039	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-private" "-foreground" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofile7LaxeR"
+1607710117320	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "-marionette" "-private" "-foreground" "-no-remote" "-profile" "C:\\Users\\Admin\\AppData\\Local\\Temp\\rust_mozprofilelBCP7W"
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
 JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
 WARNING: content window passed to PrivateBrowsingUtils.isWindowPrivate. Use isContentWindowPrivate instead (but only for frame scripts).
@@ -10,10 +10,9 @@ _wrapURIChangeCall@chrome://global/content/elements/browser-custom-element.js:95
 loadURI@chrome://global/content/elements/browser-custom-element.js:1011:12
 render/<@chrome://mozapps/content/extensions/aboutaddons.js:2349:15
 render@chrome://mozapps/content/extensions/aboutaddons.js:2308:11
-JavaScript error: chrome://extensions/content/ext-browser-content.js, line 266: TypeError: elem is null
-1607194407482	Marionette	INFO	Listening on port 57757
-1607194407659	Marionette	WARN	TLS certificate errors will be ignored for this session
-1607194423731	Marionette	INFO	Stopped listening on port 57757
+1607710122679	Marionette	INFO	Listening on port 62314
+1607710123241	Marionette	WARN	TLS certificate errors will be ignored for this session
+1607710132379	Marionette	INFO	Stopped listening on port 62314
 
 ###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
 

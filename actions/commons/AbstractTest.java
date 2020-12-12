@@ -1,12 +1,6 @@
 package commons;
 
-import java.io.File;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joda.time.DateTime;
@@ -24,12 +18,17 @@ import org.openqa.selenium.logging.LogEntry;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
+import java.io.File;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class AbstractTest {
-	WebDriver driver;
 	protected final Log log;
 	protected String rootFolder = System.getProperty("user.dir");
+	WebDriver driver;
 
 	public AbstractTest() {
 		log = LogFactory.getLog(getClass());
@@ -122,7 +121,6 @@ public class AbstractTest {
 			System.setProperty("webdriver.edge.driver", ".\\libraries\\msedgedriver.exe");
 			driver = new EdgeDriver();
 		}
-
 		driver.get(GlobalConstants.DEV_URL);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
