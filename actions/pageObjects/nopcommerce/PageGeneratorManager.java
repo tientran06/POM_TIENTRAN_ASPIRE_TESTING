@@ -60,5 +60,8 @@ public class PageGeneratorManager {
 	public static SearchPageObject getSearchPage(WebDriver driver) {
 		return new SearchPageObject(driver);
 	}
+	public static DesktopsPageObject getDesktopsPage(WebDriver driver) {
+		return new DesktopsPageObject(driver);
+	}
 
 }

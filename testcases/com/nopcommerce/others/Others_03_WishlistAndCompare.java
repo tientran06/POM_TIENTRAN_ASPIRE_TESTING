@@ -164,11 +164,11 @@ public class Others_03_WishlistAndCompare extends AbstractTest {
 		compareProductsListPage = PageGeneratorManager.getCompareProductsListPage(driver);
 
 		log.info("TC_04_AddProductToCompareAndClearList - Step 05: Verify Products information (Name and Price) in Compare products list");
-		verifyEquals(compareProductsListPage.getProductInforByColumnAndRow(compareProduct1, "3"), compareProduct1);
-		verifyEquals(compareProductsListPage.getProductInforByColumnAndRow(compareProduct2, "3"), compareProduct2);
+		verifyEquals(compareProductsListPage.getProductInforByRow(compareProduct1, "3"), compareProduct1);
+		verifyEquals(compareProductsListPage.getProductInforByRow(compareProduct2, "3"), compareProduct2);
 
-		verifyTrue(compareProductsListPage.getProductInforByColumnAndRow(compareProduct1, "4").contains("$630.00"));
-		verifyTrue(compareProductsListPage.getProductInforByColumnAndRow(compareProduct2, "4").contains("$530.00"));
+		verifyTrue(compareProductsListPage.getProductInforByRow(compareProduct1, "4").contains("$630.00"));
+		verifyTrue(compareProductsListPage.getProductInforByRow(compareProduct2, "4").contains("$530.00"));
 
 		log.info("TC_04_AddProductToCompareAndClearList - Step 06: Click to 'Clear list' button");
 		compareProductsListPage.clickToNopCommerceLinkByClass(driver, "page-body", "Clear list");
@@ -233,9 +233,9 @@ public class Others_03_WishlistAndCompare extends AbstractTest {
 		compareProductsListPage = PageGeneratorManager.getCompareProductsListPage(driver);
 
 		log.info("TC_06_AddProductToCompareAndRemove - Step 06: Verify Products information in Compare products list");
-		verifyEquals(compareProductsListPage.getProductInforByColumnAndRow(viewedProduct1, "3"), viewedProduct1);
-		verifyEquals(compareProductsListPage.getProductInforByColumnAndRow(viewedProduct2, "3"), viewedProduct2);
-		verifyEquals(compareProductsListPage.getProductInforByColumnAndRow(viewedProduct3, "3"), viewedProduct3);
+		verifyEquals(compareProductsListPage.getProductInforByRow(viewedProduct1, "3"), viewedProduct1);
+		verifyEquals(compareProductsListPage.getProductInforByRow(viewedProduct2, "3"), viewedProduct2);
+		verifyEquals(compareProductsListPage.getProductInforByRow(viewedProduct3, "3"), viewedProduct3);
 
 		log.info("TC_06_AddProductToCompareAndRemove - Step 07: Click to 'Remove' button of 3 products");
 		compareProductsListPage.clickToButtonByColumnAndRow(viewedProduct1, "1");

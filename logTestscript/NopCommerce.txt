@@ -1,3 +1,5 @@
-2020-12-12 16:00:15,965 INFO  com.nopcommerce.others.Others_03_WishlistAndCompare - Pre-conditions: Login to the System and go to My Account page
-2020-12-12 16:00:17,743 INFO  com.nopcommerce.others.Others_03_WishlistAndCompare - OS Name = windows 10
-2020-12-12 16:00:18,912 INFO  com.nopcommerce.others.Others_03_WishlistAndCompare - ---------------------- QUIT BROWSER SUCCESS ----------------------
+2020-12-14 22:10:32,675 INFO  com.nopcommerce.common.Common_01_RegisterUser -  -------------------------- PASSED -------------------------- 
+2020-12-14 22:10:45,136 INFO  com.nopcommerce.others.Others_04_Order - Pre-conditions: Login to the System and go to My Account page
+2020-12-14 22:10:49,462 INFO  com.nopcommerce.others.Others_04_Order -  -------------------------- PASSED -------------------------- 
+2020-12-14 22:10:56,899 INFO  com.nopcommerce.others.Others_04_Order - OS Name = windows 10
+2020-12-14 22:10:57,857 INFO  com.nopcommerce.others.Others_04_Order - ---------------------- QUIT BROWSER SUCCESS ----------------------

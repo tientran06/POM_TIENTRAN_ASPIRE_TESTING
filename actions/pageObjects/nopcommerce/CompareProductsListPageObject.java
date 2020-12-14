@@ -21,7 +21,7 @@ public class CompareProductsListPageObject extends AbstractPage {
 		return isElementUnDisplayed(driver, CompareProductsListUI.DYNAMIC_PRODUCT_INFOR, labelValue, textValue);
 	}
 
-	public String getProductInforByColumnAndRow(String productName, String rowNumber) {
+	public String getProductInforByRow(String productName, String rowNumber) {
 		int index;
 		String locator;
 		index = findElementsByXpath(driver, CompareProductsListUI.DYNAMIC_LOCATOR_PRODUCT, productName).size() + 1;

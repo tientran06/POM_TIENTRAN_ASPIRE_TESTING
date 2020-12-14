@@ -22,6 +22,7 @@ public class AbstractPageNopCommerceUI {
 
 	// Radio button
 	public static final String DYNAMIC_RADIO = "//input[@type = 'radio' and @id = '%s']";
+	public static final String DYNAMIC_RADIO_BY_LABEL = "//label[text() = '%s']//preceding-sibling::input[@type = 'radio']";
 
 	// Textbox
 	public static final String DYNAMIC_TEXTBOX = "//input[@id = '%s']";
@@ -40,6 +41,7 @@ public class AbstractPageNopCommerceUI {
 
 	// Checkbox
 	public static final String DYNAMIC_CHECKBOX = "//input[@type = 'checkbox' and @id = '%s']";
+	public static final String DYNAMIC_CHECKBOX_BY_LABEL = "//label[text() = '%s']//preceding-sibling::input[@type = 'checkbox']";
 
 	// Link
 	public static final String DYNAMIC_LINK = "//div[contains(@class,'%s')]//a[text() = '%s']";
@@ -58,5 +60,7 @@ public class AbstractPageNopCommerceUI {
 
 	// Product detail
 	public static final String DYNAMIC_PRODUCT_DETAIL = "//tr//td[@class = 'product']//a[text() = '%s']";
+	public static final String DYNAMIC_PRODUCT_INFOR = "//td[@class = 'product']/a[text() = '%s']//ancestor::tbody/preceding-sibling::thead//th[contains(.,'Product(s)')]";
+	
 
 }

@@ -863,5 +863,15 @@ public class AbstractPage {
 		waitForElementInvisible(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
 		return isElementUnDisplayed(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
 	}
+	
+	public void clickToNopCommerceRadioButtonByText(WebDriver driver, String textValue) {
+		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_RADIO_BY_LABEL, textValue);
+		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_RADIO_BY_LABEL, textValue);
+	}
+
+	public void checkOnNopCommerceCheckboxByText(WebDriver driver, String textValue) {
+		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, textValue);
+		checkTheCheckbox(driver, AbstractPageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, textValue);
+	}
 
 }
