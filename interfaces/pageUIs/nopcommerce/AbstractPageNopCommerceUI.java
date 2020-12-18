@@ -60,7 +60,6 @@ public class AbstractPageNopCommerceUI {
 
 	// Product detail
 	public static final String DYNAMIC_PRODUCT_DETAIL = "//tr//td[@class = 'product']//a[text() = '%s']";
-	public static final String DYNAMIC_PRODUCT_INFOR = "//td[@class = 'product']/a[text() = '%s']//ancestor::tbody/preceding-sibling::thead//th[contains(.,'Product(s)')]";
-	
+	public static final String DYNAMIC_PRODUCT_INFOR = "//tbody//td[@class = 'product']/a[text() = '%s']//ancestor::tr/preceding-sibling::tr";
 
 }

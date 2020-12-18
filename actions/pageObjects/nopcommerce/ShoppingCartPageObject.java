@@ -9,5 +9,4 @@ public class ShoppingCartPageObject extends AbstractPage {
 	public ShoppingCartPageObject(WebDriver _driver) {
 		driver = _driver;
 	}
-
 }

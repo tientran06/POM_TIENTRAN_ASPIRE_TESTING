@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageUIs.nopcommerce.AbstractPageNopCommerceUI;
+import pageUIs.nopcommerce.CompareProductsListUI;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
@@ -23,6 +24,8 @@ public class AbstractPage {
 	private JavascriptExecutor jsExecutor;
 	private Select select;
 	private Actions action;
+	private int index;
+	private String locator;
 
 	public void openUrl(WebDriver driver, String urlValue) {
 		driver.get(urlValue);
@@ -367,7 +370,8 @@ public class AbstractPage {
 
 	public void dragAndDrop(WebDriver driver, String sourceLocator, String targetLocator) {
 		action = new Actions(driver);
-		action.dragAndDrop(findElementByXpath(driver, sourceLocator), findElementByXpath(driver, targetLocator)).perform();
+		action.dragAndDrop(findElementByXpath(driver, sourceLocator), findElementByXpath(driver, targetLocator))
+				.perform();
 	}
 
 	public void sendKeyboardToElement(WebDriver driver, String locator, Keys key) {
@@ -488,7 +492,8 @@ public class AbstractPage {
 		select.selectByVisibleText(valueItem);
 	}
 
-	public void selectDefaultDropdownListByVisibleText(WebDriver driver, String locator, String valueItem, String... values) {
+	public void selectDefaultDropdownListByVisibleText(WebDriver driver, String locator, String valueItem,
+			String... values) {
 		element = findElementByXpath(driver, locator, values);
 		select = new Select(element);
 		select.selectByVisibleText(valueItem);
@@ -512,7 +517,8 @@ public class AbstractPage {
 		return select.getFirstSelectedOption().getText();
 	}
 
-	public void selectCustomDropdownList(WebDriver driver, String parentXpath, String allItemsXpath, String expectedText) {
+	public void selectCustomDropdownList(WebDriver driver, String parentXpath, String allItemsXpath,
+			String expectedText) {
 		clickToElement(driver, parentXpath);
 		List<WebElement> allItems = findElementsByXpath(driver, allItemsXpath);
 		waitForElementPresence(driver, allItemsXpath);
@@ -525,7 +531,8 @@ public class AbstractPage {
 		}
 	}
 
-	public void inputItemInCustomDropdown(WebDriver driver, String parentXpath, String inputXpath, String expectedXpath) {
+	public void inputItemInCustomDropdown(WebDriver driver, String parentXpath, String inputXpath,
+			String expectedXpath) {
 		clickToElement(driver, parentXpath);
 		sendKeyToElement(driver, inputXpath, expectedXpath);
 		sendKeyboardToElement(driver, inputXpath, Keys.ENTER);
@@ -567,13 +574,15 @@ public class AbstractPage {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = findElementByXpath(driver, locator);
 		String originalStyle = element.getAttribute("style");
-		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", "border: 5px solid red; border-style: dashed;");
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style",
+				"border: 5px solid red; border-style: dashed;");
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", originalStyle);
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style",
+				originalStyle);
 	}
 
 	public void clickToElementByJS(WebDriver driver, String locator) {
@@ -604,14 +613,17 @@ public class AbstractPage {
 
 	public boolean verifyTextInInnerTextByJS(WebDriver driver, String textExpected) {
 		jsExecutor = (JavascriptExecutor) driver;
-		String textActual = (String) jsExecutor.executeScript("return document.documentElement.innerText.match('" + textExpected + "')[0]");
+		String textActual = (String) jsExecutor
+				.executeScript("return document.documentElement.innerText.match('" + textExpected + "')[0]");
 		return textActual.equals(textExpected);
 	}
 
 	public boolean checkAnyImageLoaded(WebDriver driver, String locator) {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = findElementByXpath(driver, locator);
-		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", element);
+		boolean status = (boolean) jsExecutor.executeScript(
+				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+				element);
 		if (status) {
 			return true;
 		} else {
@@ -653,7 +665,8 @@ public class AbstractPage {
 		sleepInSecond(driver, 2);
 	}
 
-	public void uploadFileByRobot(WebDriver driver, String uploadFile, String picturePath, String buttonStart) throws Exception {
+	public void uploadFileByRobot(WebDriver driver, String uploadFile, String picturePath, String buttonStart)
+			throws Exception {
 		clickToElement(driver, uploadFile);
 		Thread.sleep(1000);
 
@@ -680,7 +693,8 @@ public class AbstractPage {
 		clickToElement(driver, buttonStart);
 	}
 
-	public void uploadAutoIT(WebDriver driver, String uploadFile, String picturePath, String buttonStart) throws Exception {
+	public void uploadAutoIT(WebDriver driver, String uploadFile, String picturePath, String buttonStart)
+			throws Exception {
 		String chromePath = ".\\uploadAutoIT\\chrome.exe";
 		String firefoxPath = ".\\uploadAutoIT\\firefox.exe";
 		String iePath = ".\\uploadAutoIT\\ie.exe";
@@ -787,7 +801,8 @@ public class AbstractPage {
 
 	public void selectNopCommerceDropdownListByName(WebDriver driver, String dropdownName, String valueItem) {
 		waitForElementPresence(driver, AbstractPageNopCommerceUI.DYNAMIC_DROPDOWN_LIST, dropdownName);
-		selectDefaultDropdownListByVisibleText(driver, AbstractPageNopCommerceUI.DYNAMIC_DROPDOWN_LIST, valueItem, dropdownName);
+		selectDefaultDropdownListByVisibleText(driver, AbstractPageNopCommerceUI.DYNAMIC_DROPDOWN_LIST, valueItem,
+				dropdownName);
 	}
 
 	public void clickToNopCommerceButtonByValue(WebDriver driver, String classValue, String buttonValue) {
@@ -806,8 +821,10 @@ public class AbstractPage {
 	}
 
 	public boolean isNopCommerceDropdownListSelectedByText(WebDriver driver, String dropdownName, String selectedText) {
-		waitForElementPresence(driver, AbstractPageNopCommerceUI.DYNAMIC_SELECTED_DROPDOWN_LIST, dropdownName, selectedText);
-		return isElementSelected(driver, AbstractPageNopCommerceUI.DYNAMIC_SELECTED_DROPDOWN_LIST, dropdownName, selectedText);
+		waitForElementPresence(driver, AbstractPageNopCommerceUI.DYNAMIC_SELECTED_DROPDOWN_LIST, dropdownName,
+				selectedText);
+		return isElementSelected(driver, AbstractPageNopCommerceUI.DYNAMIC_SELECTED_DROPDOWN_LIST, dropdownName,
+				selectedText);
 	}
 
 	public String getNopCommerceTextByClass(WebDriver driver, String classValue) {
@@ -846,7 +863,8 @@ public class AbstractPage {
 	}
 
 	public void clickToNopCommerceProductSubButtonByValue(WebDriver driver, String productName, String subButtonValue) {
-		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_SUB_BUTTON, productName, subButtonValue);
+		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_SUB_BUTTON, productName,
+				subButtonValue);
 		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_SUB_BUTTON, productName, subButtonValue);
 	}
 
@@ -863,7 +881,7 @@ public class AbstractPage {
 		waitForElementInvisible(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
 		return isElementUnDisplayed(driver, AbstractPageNopCommerceUI.DYNAMIC_LINK, classValue, textValue);
 	}
-	
+
 	public void clickToNopCommerceRadioButtonByText(WebDriver driver, String textValue) {
 		waitForElementClickable(driver, AbstractPageNopCommerceUI.DYNAMIC_RADIO_BY_LABEL, textValue);
 		clickToElement(driver, AbstractPageNopCommerceUI.DYNAMIC_RADIO_BY_LABEL, textValue);
@@ -872,6 +890,26 @@ public class AbstractPage {
 	public void checkOnNopCommerceCheckboxByText(WebDriver driver, String textValue) {
 		waitForElementVisible(driver, AbstractPageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, textValue);
 		checkTheCheckbox(driver, AbstractPageNopCommerceUI.DYNAMIC_CHECKBOX_BY_LABEL, textValue);
+	}
+
+	public String getNopCommerceProductInforByColumn(WebDriver driver, String productName, int columnNumber) {
+		overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
+		index = findElementsByXpath(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_INFOR, productName).size() + 1;
+		overrideGlobalTimeout(driver, GlobalConstants.LONG_TIMEOUT);
+		//get Index base on productName and input to locator (row and column) to get new locator
+		locator = "//tr[" + index + "]/td[" + columnNumber + "]/span";
+		waitForElementVisible(driver, locator);
+		return getTextElement(driver, locator);
+	}
+	
+	public String getNopCommerceProductDescriptionByColumn(WebDriver driver, String productName, int columnNumber, String textValue) {
+		overrideGlobalTimeout(driver, GlobalConstants.SHORT_TIMEOUT);
+		index = findElementsByXpath(driver, AbstractPageNopCommerceUI.DYNAMIC_PRODUCT_INFOR, productName).size() + 1;
+		overrideGlobalTimeout(driver, GlobalConstants.LONG_TIMEOUT);
+		//get Index base on productName and input to locator (row and column) to get new locator
+		locator = "//tr[" + index + "]/td[" + columnNumber + "]/div[contains(.,'%s')]";
+		waitForElementVisible(driver, locator, textValue);
+		return getTextElement(driver, locator, textValue);
 	}
 
 }

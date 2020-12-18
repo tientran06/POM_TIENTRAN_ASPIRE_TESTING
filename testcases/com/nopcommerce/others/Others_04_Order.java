@@ -69,7 +69,20 @@ public class Others_04_Order extends AbstractTest {
 		productPage.clickToNopCommerceLinkByClass(driver, "bar-notification", "shopping cart");
 		
 		shoppingCartPage = PageGeneratorManager.getShoppingCartPage(driver);
-		//shoppingCartPage.getNopCommerceProductInforByColumn("columnNumber");
+		
+		verifyEquals(shoppingCartPage.getNopCommerceProductNameByText(driver, productName1), productName1);
+		log.info("Price ----------------------------");
+		verifyEquals(shoppingCartPage.getNopCommerceProductInforByColumn(driver, productName1, 5), "$1,330.00");
+		log.info("Total price ----------------------------");
+		verifyEquals(shoppingCartPage.getNopCommerceProductInforByColumn(driver, productName1, 7), "$1,330.00");
+		
+		log.info("Product detail ----------------------------");
+		verifyTrue(shoppingCartPage.getNopCommerceProductDescriptionByColumn(driver, productName1, 4, processor).contains(processor));
+		verifyTrue(shoppingCartPage.getNopCommerceProductDescriptionByColumn(driver, productName1, 4, ram).contains(ram));
+		verifyTrue(shoppingCartPage.getNopCommerceProductDescriptionByColumn(driver, productName1, 4, hdd).contains(hdd));
+		verifyTrue(shoppingCartPage.getNopCommerceProductDescriptionByColumn(driver, productName1, 4, os).contains(os));
+		verifyTrue(shoppingCartPage.getNopCommerceProductDescriptionByColumn(driver, productName1, 4, software).contains(software));
+		
 	}
 
 	@Test()
