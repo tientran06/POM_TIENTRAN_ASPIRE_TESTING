@@ -577,6 +577,12 @@ public class AbstractPage {
 		jsExecutor.executeScript("arguments[0].setAttribute('value', '" + value + "')", element);
 	}
 
+	public void sendkeyToElementByJS(WebDriver driver, String locator, String textValue, String... values) {
+		jsExecutor = (JavascriptExecutor) driver;
+		element = findElementByXpath(driver, locator, values);
+		jsExecutor.executeScript("arguments[0].setAttribute('value', '" + textValue + "')", element);
+	}
+
 	public void scrollToBottomPageByJS(WebDriver driver) {
 		jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
@@ -786,7 +792,7 @@ public class AbstractPage {
 		sleepInSecond(driver, 1);
 		clickToElement(driver, AbstractPagePageUI.DYNAMIC_BUTTON, buttonValue);
 	}
-	
+
 	public boolean isAspireButtonDisplayedByText(WebDriver driver, String buttonValue) {
 		waitForElementVisible(driver, AbstractPagePageUI.DYNAMIC_BUTTON, buttonValue);
 		sleepInSecond(driver, 1);
@@ -806,17 +812,19 @@ public class AbstractPage {
 	}
 
 	public void selectAspireMultiCustomDropdownListByLabel(WebDriver driver, String parentXpathValue,
-			String expectedText1, String expectedText2) {
+			String expectedText) {
 		waitForElementClickable(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, parentXpathValue);
 		clickToElement(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, parentXpathValue);
 
+		List<WebElement> allItems = findElementsByXpath(driver, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_LIST);
 		waitForElementPresence(driver, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_LIST);
-		waitForElementClickable(driver, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_ITEM, expectedText1);
-		clickToElement(driver, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_ITEM, expectedText1);
 		
-		waitForElementClickable(driver, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_ITEM, expectedText2);
-		clickToElement(driver, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_ITEM, expectedText2);
-		
+		for (WebElement item : allItems) {
+			if (item.getText().contains(expectedText)) {
+				item.click();
+				break;
+			}
+		}
 		clickToElement(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, parentXpathValue);
 	}
 }

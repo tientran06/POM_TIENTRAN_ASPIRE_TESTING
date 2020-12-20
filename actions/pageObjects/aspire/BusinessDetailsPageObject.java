@@ -11,17 +11,10 @@ public class BusinessDetailsPageObject extends AbstractPage{
 	public BusinessDetailsPageObject(WebDriver _driver) {
 		driver = _driver;
 	}
-
-	public void inputToBusinessRegistrationNoTextBox(String uENCode) {
-		waitForElementVisible(driver, BusinessDetailsPageUI.BUSINESS_REG_NUMBER_TEXTBOX);
-		sendkeyToElementByJS(driver, BusinessDetailsPageUI.BUSINESS_REG_NUMBER_TEXTBOX, uENCode);
-		
-	}
-
-	public void inputToBusinessNameTextbox(String businessName) {
-		waitForElementVisible(driver, BusinessDetailsPageUI.BUSINESS_FULL_NAME_TEXTBOX);
-		sendkeyToElementByJS(driver, BusinessDetailsPageUI.BUSINESS_FULL_NAME_TEXTBOX, businessName);
-		
+	
+	public void inputToBusinessDetailTextBox(String nameField, String textValue) {
+		waitForElementVisible(driver, BusinessDetailsPageUI.DYNAMIC_BUSINESS_DETAIL_TEXTBOX, nameField);
+		sendKeyToElement(driver, BusinessDetailsPageUI.DYNAMIC_BUSINESS_DETAIL_TEXTBOX, textValue, nameField);
 	}
 
 	}

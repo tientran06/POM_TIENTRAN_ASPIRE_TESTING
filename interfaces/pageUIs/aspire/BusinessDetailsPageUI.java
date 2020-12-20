@@ -1,6 +1,7 @@
 package pageUIs.aspire;
 
 public class BusinessDetailsPageUI {
-	public static final String BUSINESS_FULL_NAME_TEXTBOX = "//div//input[@data-cy = 'register-business-name']";
-	public static final String BUSINESS_REG_NUMBER_TEXTBOX = "//div//input[@data-cy = 'register-business-registration-numer']";
+	public static final String DYNAMIC_BUSINESS_DETAIL_TEXTBOX = "//div//input[@placeholder = '%s']";
+	
+	//public static final String BUSINESS_DETAIL_TEXTBOX = "//div[@class = 'auth-form__card']//div[@label = '%s']";
 }
