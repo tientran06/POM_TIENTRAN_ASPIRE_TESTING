@@ -8,6 +8,7 @@ public class GlobalConstants {
 	public static final String USERNAME = "";
 	public static final String PASSWORD = "";
 	public static final long SHORT_TIMEOUT = 5;
+	public static final long SPECIAL_TIMEOUT = 30;
 	public static final long LONG_TIMEOUT = 20;
 	public static final String UPLOAD_FILE_PATH = PROJECT_PATH + "\\uploadFiles\\";
 

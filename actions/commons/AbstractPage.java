@@ -74,6 +74,10 @@ public class AbstractPage {
 		return driver.findElement(byXpathLocator(locator));
 	}
 
+	public WebElement findElementByXpath(WebDriver driver, By byXpath) {
+		return driver.findElement(byXpath);
+	}
+
 	public WebElement findElementByXpath(WebDriver driver, String locator, String... values) {
 		locator = String.format(locator, (Object[]) values);
 		return driver.findElement(byXpathLocator(locator));
@@ -81,6 +85,9 @@ public class AbstractPage {
 
 	public List<WebElement> findElementsByXpath(WebDriver driver, String locator) {
 		return driver.findElements(byXpathLocator(locator));
+	}
+	public List<WebElement> findElementsByXpath(WebDriver driver, By byXpath) {
+		return driver.findElements(byXpath);
 	}
 
 	public List<WebElement> findElementsByXpath(WebDriver driver, String locator, String... values) {
@@ -98,6 +105,11 @@ public class AbstractPage {
 		}
 	}
 
+	public void clickToElement(WebDriver driver, By byXpath) {
+		element = findElementByXpath(driver,byXpath);
+		element.click();
+	}
+
 	public void clickToElement(WebDriver driver, String locator, String... values) {
 		element = findElementByXpath(driver, locator, values);
 		if (driver.toString().toLowerCase().contains("internetexplorer")) {
@@ -108,17 +120,17 @@ public class AbstractPage {
 		}
 	}
 
+	public void clickToElement(WebDriver driver, By xpath, String... values) {
+		element = driver.findElement(xpath);
+		element.click();
+	}
+
 	public void sendKeyToElement(WebDriver driver, String locator, String inputValue) {
 		element = findElementByXpath(driver, locator);
 		element.clear();
 		element.sendKeys(inputValue);
 	}
 
-//	public void sendKeyToElement(WebDriver driver, String locator, String inputValue, String... values) {
-//		element = findElementByXpath(driver, locator, values);
-//		element.clear();
-//		element.sendKeys(inputValue);
-//	}
 	public void sendKeyToElement(WebDriver driver, String locator, String inputValue, String... values) {
 		element = findElementByXpath(driver, locator, values);
 		element.sendKeys(inputValue);
@@ -384,8 +396,7 @@ public class AbstractPage {
 
 	public void dragAndDrop(WebDriver driver, String sourceLocator, String targetLocator) {
 		action = new Actions(driver);
-		action.dragAndDrop(findElementByXpath(driver, sourceLocator), findElementByXpath(driver, targetLocator))
-				.perform();
+		action.dragAndDrop(findElementByXpath(driver, sourceLocator), findElementByXpath(driver, targetLocator)).perform();
 	}
 
 	public void sendKeyboardToElement(WebDriver driver, String locator, Keys key) {
@@ -428,7 +439,7 @@ public class AbstractPage {
 	}
 
 	public void waitForElementVisible(WebDriver driver, String locator, String... values) {
-		waitExplicit = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
+		waitExplicit = new WebDriverWait(driver, GlobalConstants.SPECIAL_TIMEOUT);
 		byXpath = byXpathLocator(locator, values);
 		try {
 			System.out.println("Start time for wait visible = " + new Date());
@@ -506,8 +517,7 @@ public class AbstractPage {
 		select.selectByVisibleText(valueItem);
 	}
 
-	public void selectDefaultDropdownListByVisibleText(WebDriver driver, String locator, String valueItem,
-			String... values) {
+	public void selectDefaultDropdownListByVisibleText(WebDriver driver, String locator, String valueItem, String... values) {
 		element = findElementByXpath(driver, locator, values);
 		select = new Select(element);
 		select.selectByVisibleText(valueItem);
@@ -531,8 +541,7 @@ public class AbstractPage {
 		return select.getFirstSelectedOption().getText();
 	}
 
-	public void selectCustomDropdownList(WebDriver driver, String parentXpath, String allItemsXpath,
-			String expectedText) {
+	public void selectCustomDropdownList(WebDriver driver, String parentXpath, String allItemsXpath, String expectedText) {
 		clickToElement(driver, parentXpath);
 		List<WebElement> allItems = findElementsByXpath(driver, allItemsXpath);
 		waitForElementPresence(driver, allItemsXpath);
@@ -545,8 +554,7 @@ public class AbstractPage {
 		}
 	}
 
-	public void selectCustomDropdownList(WebDriver driver, String parentXpath, String allItemsXpath,
-			String expectedText, String... values) {
+	public void selectCustomDropdownList(WebDriver driver, String parentXpath, String allItemsXpath, String expectedText, String... values) {
 		clickToElement(driver, parentXpath, values);
 		List<WebElement> allItems = findElementsByXpath(driver, allItemsXpath);
 		waitForElementPresence(driver, allItemsXpath);
@@ -559,8 +567,7 @@ public class AbstractPage {
 		}
 	}
 
-	public void inputItemInCustomDropdown(WebDriver driver, String parentXpath, String inputXpath,
-			String expectedXpath) {
+	public void inputItemInCustomDropdown(WebDriver driver, String parentXpath, String inputXpath, String expectedXpath) {
 		clickToElement(driver, parentXpath);
 		sendKeyToElement(driver, inputXpath, expectedXpath);
 		sendKeyboardToElement(driver, inputXpath, Keys.ENTER);
@@ -614,15 +621,13 @@ public class AbstractPage {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = findElementByXpath(driver, locator);
 		String originalStyle = element.getAttribute("style");
-		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style",
-				"border: 5px solid red; border-style: dashed;");
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", "border: 5px solid red; border-style: dashed;");
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style",
-				originalStyle);
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])", element, "style", originalStyle);
 	}
 
 	public void clickToElementByJS(WebDriver driver, String locator) {
@@ -660,17 +665,14 @@ public class AbstractPage {
 
 	public boolean verifyTextInInnerTextByJS(WebDriver driver, String textExpected) {
 		jsExecutor = (JavascriptExecutor) driver;
-		String textActual = (String) jsExecutor
-				.executeScript("return document.documentElement.innerText.match('" + textExpected + "')[0]");
+		String textActual = (String) jsExecutor.executeScript("return document.documentElement.innerText.match('" + textExpected + "')[0]");
 		return textActual.equals(textExpected);
 	}
 
 	public boolean checkAnyImageLoaded(WebDriver driver, String locator) {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = findElementByXpath(driver, locator);
-		boolean status = (boolean) jsExecutor.executeScript(
-				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
-				element);
+		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", element);
 		if (status) {
 			return true;
 		} else {
@@ -712,8 +714,7 @@ public class AbstractPage {
 		sleepInSecond(driver, 2);
 	}
 
-	public void uploadFileByRobot(WebDriver driver, String uploadFile, String picturePath, String buttonStart)
-			throws Exception {
+	public void uploadFileByRobot(WebDriver driver, String uploadFile, String picturePath, String buttonStart) throws Exception {
 		clickToElement(driver, uploadFile);
 		Thread.sleep(1000);
 
@@ -740,8 +741,7 @@ public class AbstractPage {
 		clickToElement(driver, buttonStart);
 	}
 
-	public void uploadAutoIT(WebDriver driver, String uploadFile, String picturePath, String buttonStart)
-			throws Exception {
+	public void uploadAutoIT(WebDriver driver, String uploadFile, String picturePath, String buttonStart) throws Exception {
 		String chromePath = ".\\uploadAutoIT\\chrome.exe";
 		String firefoxPath = ".\\uploadAutoIT\\firefox.exe";
 		String iePath = ".\\uploadAutoIT\\ie.exe";
@@ -802,8 +802,7 @@ public class AbstractPage {
 	public void selectAspireCustomDropdownListByLabel(WebDriver driver, String parentXpathValue, String expectedText) {
 		waitForElementClickable(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, parentXpathValue);
 		sleepInSecond(driver, 2);
-		selectCustomDropdownList(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON,
-				AbstractPagePageUI.CUSTOM_DROPDOWNLIST_LIST, expectedText, parentXpathValue);
+		selectCustomDropdownList(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_LIST, expectedText, parentXpathValue);
 	}
 
 	public boolean isAspireTitleFormDisplayedByText(WebDriver driver, String titleValue) {
@@ -811,14 +810,13 @@ public class AbstractPage {
 		return isElementDisplayed(driver, AbstractPagePageUI.DYNAMIC_TITLE_FORM, titleValue);
 	}
 
-	public void selectAspireMultiCustomDropdownListByLabel(WebDriver driver, String parentXpathValue,
-			String expectedText) {
+	public void selectAspireMultiCustomDropdownListByLabel(WebDriver driver, String parentXpathValue, String expectedText) {
 		waitForElementClickable(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, parentXpathValue);
 		clickToElement(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, parentXpathValue);
 
 		List<WebElement> allItems = findElementsByXpath(driver, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_LIST);
 		waitForElementPresence(driver, AbstractPagePageUI.CUSTOM_DROPDOWNLIST_LIST);
-		
+
 		for (WebElement item : allItems) {
 			if (item.getText().contains(expectedText)) {
 				item.click();

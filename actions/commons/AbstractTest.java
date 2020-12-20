@@ -5,6 +5,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,8 +20,15 @@ import org.testng.Assert;
 import org.testng.Reporter;
 
 import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class AbstractTest {
@@ -35,8 +44,7 @@ public class AbstractTest {
 		LogEntries logs = driver.manage().logs().get("browser");
 		List<LogEntry> logList = logs.getAll();
 		for (LogEntry logging : logList) {
-			log.info("--------------------" + logging.getLevel().toString() + "----------------- \n"
-					+ logging.getMessage());
+			log.info("--------------------" + logging.getLevel().toString() + "----------------- \n" + logging.getMessage());
 		}
 	}
 
@@ -193,6 +201,47 @@ public class AbstractTest {
 
 	public void overrideTimeout(WebDriver driver, long timeOut) {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
+	}
+
+	protected String getCurrentMonth1() {
+		DateTime now = new DateTime(DateTimeZone.UTC);
+		int month = now.getMonthOfYear();
+		if (month < 10) {
+			String monthValue = "0" + month;
+			return monthValue;
+		}
+		return String.valueOf(month);
+	}
+
+	protected String getCurrentMonth() {
+		LocalDate currentdate = LocalDate.now();
+		Month currentMonth = currentdate.getMonth();
+		String month = currentMonth.toString().toLowerCase();
+		return toTitleCase(month);
+	}
+
+	protected String getCurrentYear() {
+		DateTime now = new DateTime(DateTimeZone.UTC);
+		int year = now.getYear();
+		return String.valueOf(year);
+	}
+
+	protected static String toTitleCase(String input) {
+		StringBuilder titleCase = new StringBuilder(input.length());
+		boolean nextTitleCase = true;
+
+		for (char c : input.toCharArray()) {
+			if (Character.isSpaceChar(c)) {
+				nextTitleCase = true;
+			} else if (nextTitleCase) {
+				c = Character.toTitleCase(c);
+				nextTitleCase = false;
+			}
+
+			titleCase.append(c);
+		}
+
+		return titleCase.toString();
 	}
 
 	protected void closeBrowserAndDriver(WebDriver driver) {
