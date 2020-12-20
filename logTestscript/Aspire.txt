@@ -1,0 +1,18 @@
+2020-12-20 00:58:34,871 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2020-12-20 00:58:40,211 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2020-12-20 00:58:48,969 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2020-12-20 00:58:50,366 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2020-12-20 00:58:51,084 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2020-12-20 00:58:51,297 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2020-12-20 00:59:12,731 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2020-12-20 01:00:03,214 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- FAILED -------------------------- 
+2020-12-20 01:00:24,583 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- FAILED -------------------------- 
+2020-12-20 01:00:24,604 INFO  com.aspire.registration.Registration_01_Registration - OS Name = windows 10
+2020-12-20 01:00:24,618 INFO  com.aspire.registration.Registration_01_Registration - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=87.0.4280.88)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:53'
+System info: host: 'ADMIN', ip: '192.168.44.106', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 87.0.4280.88, chrome: {chromedriverVersion: 87.0.4280.88 (89e2380a3e36c..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56368}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 7759ad458faaaa0e83309e911d7b1e16

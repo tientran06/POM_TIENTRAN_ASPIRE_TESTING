@@ -2,7 +2,7 @@ package commons;
 
 public class GlobalConstants {
 	public static final String PROJECT_PATH = System.getProperty("user.dir");
-	public static final String DEV_URL = "https://demo.nopcommerce.com/";
+	public static final String DEV_URL = "https://feature-qa.customer-frontend.staging.aspireapp.com/sg/";
 	public static final String TEST_URL = "";
 	public static final String STAGING_URL = "";
 	public static final String USERNAME = "";
