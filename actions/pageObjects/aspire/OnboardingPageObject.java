@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import commons.AbstractPage;
 import pageUIs.aspire.OnboardingPageUI;
 
-public class OnboardingPageObject extends AbstractPage{
+public class OnboardingPageObject extends AbstractPage {
 	WebDriver driver;
 
 	public OnboardingPageObject(WebDriver _driver) {
@@ -23,5 +23,5 @@ public class OnboardingPageObject extends AbstractPage{
 		sleepInSecond(driver, 1);
 		clickToElement(driver, OnboardingPageUI.DYNAMIC_SUB_METHOD_BUTTON, textValue);
 	}
-	
-	}
+
+}

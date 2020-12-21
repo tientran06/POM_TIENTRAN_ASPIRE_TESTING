@@ -13,7 +13,6 @@ import pageObjects.aspire.RegisterPageObject;
 import pageObjects.aspire.VerifyOTPPageObject;
 
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +28,7 @@ public class Registration_01_Registration extends AbstractTest {
 	private CompletePageObject completePage;
 	private BusinessDetailsPageObject businessDetailsPage;
 
-	private String fullName, email, countryValue, phoneNumber, roleOfCompany, sourceRefer, referralCode;
+	private String fullName, email, countryValue, phoneNumber, roleOfCompany, sourceRefer, referralCode, birthYear, birthMonth, birthDay;
 	private String OTPCode, nationality, gender, checkboxItem1, checkboxItem2, businessName, registrationType, UENCode, industry, subIndustry, currentYear, currentMonth;
 
 	@Parameters("browser")
@@ -56,14 +55,14 @@ public class Registration_01_Registration extends AbstractTest {
 		UENCode = randomNumber8Digits() + randomAlphabetic();
 		industry = "Business Services";
 		subIndustry = "Automotive & Cars";
+		birthYear = "1987";
+		birthMonth = "May";
+		birthDay = "14";
 
 		currentYear = getCurrentYear();
 		currentMonth = getCurrentMonth();
 	}
 
-	@BeforeMethod
-	public void beforeMethod() {
-	}
 
 	@Test
 	public void TC_01_RegisterToSystem() {
@@ -125,7 +124,7 @@ public class Registration_01_Registration extends AbstractTest {
 		verifyEquals(personalDetailsPage.getPersonalEmail("value"), email);
 
 		log.info("TC_03_PersonnalDetailsRegistration - Step 06: Select Date of Birth");
-		personalDetailsPage.selectDateOfBirthByText(currentYear, currentMonth, "1987", "May", "14");
+		personalDetailsPage.selectDateOfBirthByText(currentYear, currentMonth, birthYear , birthMonth , birthDay);
 
 		log.info("TC_03_PersonnalDetailsRegistration - Step 07: Select 'Nationality' option");
 		personalDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Nationality", nationality);
@@ -134,6 +133,7 @@ public class Registration_01_Registration extends AbstractTest {
 		personalDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Gender", gender);
 
 		log.info("TC_03_PersonnalDetailsRegistration - Step 09: Select interested Products");
+		
 		personalDetailsPage.selectAspireMultiCustomDropdownListByLabel(driver, "Which products are you interested in?", checkboxItem1);
 		personalDetailsPage.selectAspireMultiCustomDropdownListByLabel(driver, "Which products are you interested in?", checkboxItem2);
 

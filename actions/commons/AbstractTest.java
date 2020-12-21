@@ -35,14 +35,6 @@ public class AbstractTest {
 		log = LogFactory.getLog(getClass());
 	}
 
-	protected void printBrowserConsoleLogs(WebDriver driver) {
-		LogEntries logs = driver.manage().logs().get("browser");
-		List<LogEntry> logList = logs.getAll();
-		for (LogEntry logging : logList) {
-			log.info("--------------------" + logging.getLevel().toString() + "----------------- \n" + logging.getMessage());
-		}
-	}
-
 	public WebDriver getBrowserDriver(String browserName) {
 
 		if (browserName.equalsIgnoreCase("chrome")) {
@@ -95,7 +87,6 @@ public class AbstractTest {
 			driver = new FirefoxDriver(options);
 		} else if (browserName.equalsIgnoreCase("edge")) {
 
-			// Edge new version
 			System.setProperty("webdriver.edge.driver", ".\\libraries\\msedgedriver.exe");
 			driver = new EdgeDriver();
 		}
@@ -197,16 +188,6 @@ public class AbstractTest {
 		driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
 	}
 
-	protected String getCurrentMonth1() {
-		DateTime now = new DateTime(DateTimeZone.UTC);
-		int month = now.getMonthOfYear();
-		if (month < 10) {
-			String monthValue = "0" + month;
-			return monthValue;
-		}
-		return String.valueOf(month);
-	}
-
 	protected String getCurrentMonth() {
 		LocalDate currentdate = LocalDate.now();
 		Month currentMonth = currentdate.getMonth();
@@ -236,6 +217,14 @@ public class AbstractTest {
 		}
 
 		return titleCase.toString();
+	}
+
+	protected void printBrowserConsoleLogs(WebDriver driver) {
+		LogEntries logs = driver.manage().logs().get("browser");
+		List<LogEntry> logList = logs.getAll();
+		for (LogEntry logging : logList) {
+			log.info("--------------------" + logging.getLevel().toString() + "----------------- \n" + logging.getMessage());
+		}
 	}
 
 	protected void closeBrowserAndDriver(WebDriver driver) {

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import commons.AbstractPage;
 import pageUIs.aspire.LoginPageUI;
 
-public class LoginPageObject extends AbstractPage{
+public class LoginPageObject extends AbstractPage {
 	WebDriver driver;
 
 	public LoginPageObject(WebDriver _driver) {

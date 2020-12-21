@@ -43,22 +43,6 @@ public class AbstractPage {
 		driver.navigate().refresh();
 	}
 
-	public void acceptAlert(WebDriver driver) {
-		driver.switchTo().alert().accept();
-	}
-
-	public void cancelAlert(WebDriver driver) {
-		driver.switchTo().alert().dismiss();
-	}
-
-	public String getTextAlert(WebDriver driver) {
-		return driver.switchTo().alert().getText();
-	}
-
-	public void sendKeyToAlert(WebDriver driver, String value) {
-		driver.switchTo().alert().sendKeys(value);
-	}
-
 	public By byXpathLocator(String locator) {
 		return By.xpath(locator);
 	}
@@ -84,6 +68,7 @@ public class AbstractPage {
 	public List<WebElement> findElementsByXpath(WebDriver driver, String locator) {
 		return driver.findElements(byXpathLocator(locator));
 	}
+
 	public List<WebElement> findElementsByXpath(WebDriver driver, By byXpath) {
 		return driver.findElements(byXpath);
 	}
@@ -104,7 +89,7 @@ public class AbstractPage {
 	}
 
 	public void clickToElement(WebDriver driver, By byXpath) {
-		element = findElementByXpath(driver,byXpath);
+		element = findElementByXpath(driver, byXpath);
 		element.click();
 	}
 
@@ -148,14 +133,6 @@ public class AbstractPage {
 
 	public String getTextElement(WebDriver driver, String locator, String... values) {
 		return findElementByXpath(driver, locator, values).getText();
-	}
-
-	public int countElementNumber(WebDriver driver, String locator) {
-		return findElementsByXpath(driver, locator).size();
-	}
-
-	public int countElementNumber(WebDriver driver, String locator, String... values) {
-		return findElementsByXpath(driver, locator, values).size();
 	}
 
 	public void checkTheCheckbox(WebDriver driver, String locator) {
@@ -310,52 +287,6 @@ public class AbstractPage {
 		}
 	}
 
-	public void switchToWindowByID(WebDriver driver, String parentID) {
-		Set<String> allWindows = driver.getWindowHandles();
-
-		for (String termWindow : allWindows) {
-			if (!termWindow.equals(parentID)) {
-				driver.switchTo().window(termWindow);
-				break;
-			}
-		}
-
-	}
-
-	public void switchToWindowByTitle(WebDriver driver, String expectedTitle) {
-		Set<String> allWindows = driver.getWindowHandles();
-		for (String termWindow : allWindows) {
-			driver.switchTo().window(termWindow);
-			String currentTitle = driver.getTitle();
-			if (currentTitle.equals(expectedTitle)) {
-				break;
-			}
-		}
-	}
-
-	public void closeAllWindowsWithoutParent(WebDriver driver, String parentID) {
-		Set<String> allWindows = driver.getWindowHandles();
-		for (String termWindow : allWindows) {
-			if (!termWindow.equals(parentID)) {
-				driver.close();
-			}
-		}
-	}
-
-	public void switchToIframe(WebDriver driver, String locator) {
-		element = findElementByXpath(driver, locator);
-		driver.switchTo().frame(element);
-	}
-
-	public void switchToIframe(WebDriver driver, String locator, String... values) {
-		element = findElementByXpath(driver, locator, values);
-		driver.switchTo().frame(element);
-	}
-
-	public void backToMainPage(WebDriver driver) {
-		driver.switchTo().defaultContent();
-	}
-
 	public void moveToElement(WebDriver driver, String locator) {
 		action = new Actions(driver);
 		element = findElementByXpath(driver, locator);
@@ -390,18 +321,6 @@ public class AbstractPage {
 		action = new Actions(driver);
 		element = findElementByXpath(driver, locator, values);
 		action.contextClick(element).perform();
-	}
-
-	public void dragAndDrop(WebDriver driver, String sourceLocator, String targetLocator) {
-		action = new Actions(driver);
-		action.dragAndDrop(findElementByXpath(driver, sourceLocator), findElementByXpath(driver, targetLocator)).perform();
-	}
-
-	public void sendKeyboardToElement(WebDriver driver, String locator, Keys key) {
-		action = new Actions(driver);
-		element = findElementByXpath(driver, locator);
-		action.sendKeys(element, key).perform();
-
 	}
 
 	public void waitForElementPresence(WebDriver driver, String locator) {
@@ -565,17 +484,6 @@ public class AbstractPage {
 		}
 	}
 
-	public void inputItemInCustomDropdown(WebDriver driver, String parentXpath, String inputXpath, String expectedXpath) {
-		clickToElement(driver, parentXpath);
-		sendKeyToElement(driver, inputXpath, expectedXpath);
-		sendKeyboardToElement(driver, inputXpath, Keys.ENTER);
-	}
-
-	public Object executeJSForBrowser(WebDriver driver, String javaScript) {
-		jsExecutor = (JavascriptExecutor) driver;
-		return jsExecutor.executeScript(javaScript);
-	}
-
 	public void sendkeyToElementByJS(WebDriver driver, String locator, String value) {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = driver.findElement(By.xpath(locator));
@@ -586,11 +494,6 @@ public class AbstractPage {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = findElementByXpath(driver, locator, values);
 		jsExecutor.executeScript("arguments[0].setAttribute('value', '" + textValue + "')", element);
-	}
-
-	public void scrollToBottomPageByJS(WebDriver driver) {
-		jsExecutor = (JavascriptExecutor) driver;
-		jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 	}
 
 	public void navigateToUrlByJS(WebDriver driver, String url) {
@@ -712,55 +615,6 @@ public class AbstractPage {
 		sleepInSecond(driver, 2);
 	}
 
-	public void uploadFileByRobot(WebDriver driver, String uploadFile, String picturePath, String buttonStart) throws Exception {
-		clickToElement(driver, uploadFile);
-		Thread.sleep(1000);
-
-		StringSelection select = new StringSelection(picturePath);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(select, null);
-
-		Robot robot = new Robot();
-		Thread.sleep(1000);
-
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyRelease(KeyEvent.VK_V);
-		Thread.sleep(1000);
-
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-
-		waitForElementVisible(driver, buttonStart);
-		clickToElement(driver, buttonStart);
-	}
-
-	public void uploadAutoIT(WebDriver driver, String uploadFile, String picturePath, String buttonStart) throws Exception {
-		String chromePath = ".\\uploadAutoIT\\chrome.exe";
-		String firefoxPath = ".\\uploadAutoIT\\firefox.exe";
-		String iePath = ".\\uploadAutoIT\\ie.exe";
-
-		clickToElement(driver, uploadFile);
-		Thread.sleep(1000);
-
-		if (driver.toString().contains("firefox")) {
-			Runtime.getRuntime().exec(new String[] { firefoxPath, picturePath });
-
-		} else if (driver.toString().contains("chromePath")) {
-			Runtime.getRuntime().exec(new String[] { chromePath, picturePath });
-		} else {
-			Runtime.getRuntime().exec(new String[] { iePath, picturePath });
-		}
-
-		waitForElementVisible(driver, buttonStart);
-		clickToElement(driver, buttonStart);
-
-	}
-
 	public void sleepInSecond(WebDriver driver, long timeout) {
 		try {
 			Thread.sleep(timeout * 1000);
@@ -821,6 +675,7 @@ public class AbstractPage {
 				break;
 			}
 		}
+		sleepInSecond(driver, 1);
 		clickToElement(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, parentXpathValue);
 	}
 }

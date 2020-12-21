@@ -57,22 +57,16 @@ public class PersonalDetailsPageObject extends AbstractPage {
 		waitForElementClickable(driver, PersonalDetailsPageUI.DYNAMIC_BUTTON, currentYear);
 		clickToElement(driver, yearButton);
 
-		// element = driver.findElement(leftArrow);
-
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.SHORT_TIMEOUT, TimeUnit.SECONDS);
 		yearXpath = String.format(PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthYear);
 
 		while (true) {
 			itemList = findElementsByXpath(driver, yearXpath);
-			// itemList = driver.findElements(By.xpath(yearXpath));
-
 			if (itemList.size() > 0) {
 				itemList.get(0).click();
 				break;
 			} else {
 				waitForElementPresence(driver, PersonalDetailsPageUI.LEFT_ARROW);
-				// element = driver.findElement(leftArrow);
-				// element.click();
 				clickToElement(driver, leftArrow);
 			}
 		}
@@ -81,13 +75,12 @@ public class PersonalDetailsPageObject extends AbstractPage {
 		sleepInSecond(driver, 1);
 		waitForElementClickable(driver, PersonalDetailsPageUI.DYNAMIC_BUTTON, currentMonth);
 		clickToElement(driver, monthButton);
+
 		monthXpath = String.format(PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthMonth);
-		// itemList = findElementsByXpath(driver, monthXpath);
 		waitForElementPresence(driver, PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthMonth);
 
 		while (true) {
 			itemList = findElementsByXpath(driver, monthXpath);
-
 			if (itemList.size() > 0) {
 				itemList.get(0).click();
 				break;
@@ -98,7 +91,6 @@ public class PersonalDetailsPageObject extends AbstractPage {
 
 		sleepInSecond(driver, 1);
 		dayXpath = String.format(PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthDay);
-		// itemList = driver.findElements(By.xpath(dayXpath));
 		waitForElementPresence(driver, PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthDay);
 
 		while (true) {
