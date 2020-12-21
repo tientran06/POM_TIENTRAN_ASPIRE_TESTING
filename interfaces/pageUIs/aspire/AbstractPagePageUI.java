@@ -6,4 +6,6 @@ public class AbstractPagePageUI {
 	public static final String CUSTOM_DROPDOWNLIST_LIST = "//div//div[@class = 'q-item__label']";
 	public static final String CUSTOM_DROPDOWNLIST_ITEM = "//div[text() = '%s']//ancestor::div[contains(@class,'q-item q-item-type row no-wrap q-item--clickable')]";
 	public static final String DYNAMIC_TITLE_FORM = "//div[@class = 'auth-form']//div[contains(@class, 'text-weight-bold') and contains(text(),'%s')]";
+	public static final String DYNAMIC_ITEM_DROPDOWN = "//div[@value = '%s']";
+	public static final String DYNAMIC_ITEM_DROPDOWN_TEXT = "//div/span[contains(text(),'%s')]";
 }

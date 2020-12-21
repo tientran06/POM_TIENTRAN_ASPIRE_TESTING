@@ -77,14 +77,18 @@ public class Registration_01_Registration extends AbstractTest {
 		registerPage.inputToPhoneNumberTextbox(phoneNumber);
 		registerPage.selectRoleOfCompanyRadioButton(roleOfCompany);
 		registerPage.selectAspireCustomDropdownListByLabel(driver, "Where did you hear about us?", sourceRefer);
+		
+		log.info("TC_01_RegisterToSystem - Step 03: Verify Item in Dropdownlist is selected successfully");
+		verifyTrue(registerPage.isAspireItemInDropdownSelectedByValue(driver, sourceRefer));
+		
 		registerPage.inputReferralTextBox(referralCode);
 		registerPage.checkOnAgreeCheckBox();
 
-		log.info("TC_01_RegisterToSystem - Step 03: Click to 'Continue' button");
+		log.info("TC_01_RegisterToSystem - Step 04: Click to 'Continue' button");
 		registerPage.clickToAsPireButtonByText(driver, "Continue");
 		verifyOTPPage = PageGeneratorManager.getVerifyPage(driver);
 
-		log.info("TC_01_RegisterToSystem - Step 04: Verify 'Verification OTP' informaiton displays");
+		log.info("TC_01_RegisterToSystem - Step 05: Verify 'Verification OTP' informaiton displays");
 		verifyTrue(verifyOTPPage.isValidationOTPInformationDisplayed("Please enter the 4-digit OTP sent to"));
 	}
 
@@ -136,12 +140,18 @@ public class Registration_01_Registration extends AbstractTest {
 		
 		personalDetailsPage.selectAspireMultiCustomDropdownListByLabel(driver, "Which products are you interested in?", checkboxItem1);
 		personalDetailsPage.selectAspireMultiCustomDropdownListByLabel(driver, "Which products are you interested in?", checkboxItem2);
+		
+		log.info("TC_03_PersonnalDetailsRegistration - Step 10: Verify Item in Dropdownlist is selected successfully");
+		verifyTrue(personalDetailsPage.isAspireItemInDropdownSelectedByText(driver, nationality));
+		verifyTrue(personalDetailsPage.isAspireItemInDropdownSelectedByValue(driver, gender));
+		verifyTrue(personalDetailsPage.isAspireItemInDropdownSelectedByText(driver, checkboxItem1));
+		verifyTrue(personalDetailsPage.isAspireItemInDropdownSelectedByText(driver, checkboxItem2));
 
-		log.info("TC_03_PersonnalDetailsRegistration - Step 10: Click 'Submit' button");
+		log.info("TC_03_PersonnalDetailsRegistration - Step 11: Click 'Submit' button");
 		personalDetailsPage.clickToAsPireButtonByText(driver, "Submit");
 		verifyOTPPage = PageGeneratorManager.getVerifyPage(driver);
 
-		log.info("TC_03_PersonnalDetailsRegistration - Step 11: Verify 'Verification OTP' informaiton displays");
+		log.info("TC_03_PersonnalDetailsRegistration - Step 12: Verify 'Verification OTP' informaiton displays");
 		verifyTrue(verifyOTPPage.isValidationOTPInformationDisplayed("Please enter the 4-digit OTP sent to"));
 		verifyTrue(verifyOTPPage.isValidationOTPInformationDisplayed(email));
 	}
@@ -167,11 +177,16 @@ public class Registration_01_Registration extends AbstractTest {
 		businessDetailsPage.inputToBusinessDetailTextBox("Business Registration Number UEN", UENCode);
 		businessDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Industry", industry);
 		businessDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Sub Industry", subIndustry);
+		
+		
+		log.info("TC_05_BusinessDetailsRegistration - Step 03: Verify Item in Dropdownlist is selected successfully");
+		verifyTrue(businessDetailsPage.isAspireItemInDropdownSelectedByText(driver, registrationType));
+		verifyTrue(businessDetailsPage.isAspireItemInDropdownSelectedByText(driver, industry));
 
-		log.info("TC_05_BusinessDetailsRegistration - Step 03: Click 'Submit' button");
+		log.info("TC_05_BusinessDetailsRegistration - Step 04: Click 'Submit' button");
 		businessDetailsPage.clickToAsPireButtonByText(driver, "Submit");
 
-		log.info("TC_05_BusinessDetailsRegistration - Step 04: Verify 'Identity Verification' displays ");
+		log.info("TC_05_BusinessDetailsRegistration - Step 05: Verify 'Identity Verification' displays ");
 		verifyTrue(businessDetailsPage.isAspireTitleFormDisplayedByText(driver, "Identity Verification"));
 		verifyTrue(businessDetailsPage.isAspireButtonDisplayedByText(driver, "Get Started"));
 	}

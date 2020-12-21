@@ -8,12 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageUIs.aspire.AbstractPagePageUI;
 
-import java.awt.*;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.KeyEvent;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class AbstractPage {
@@ -675,7 +671,16 @@ public class AbstractPage {
 				break;
 			}
 		}
-		sleepInSecond(driver, 1);
+		sleepInSecond(driver, 3);
 		clickToElement(driver, AbstractPagePageUI.DYNAMIC_CUSTOM_DROPDOWNLIST_ICON, parentXpathValue);
 	}
+	public boolean isAspireItemInDropdownSelectedByValue(WebDriver driver, String itemValue) {
+		waitForElementVisible(driver, AbstractPagePageUI.DYNAMIC_ITEM_DROPDOWN, itemValue);
+		return isElementDisplayed(driver, AbstractPagePageUI.DYNAMIC_ITEM_DROPDOWN, itemValue);
+	}
+	public boolean isAspireItemInDropdownSelectedByText(WebDriver driver, String itemTextValue) {
+		waitForElementVisible(driver, AbstractPagePageUI.DYNAMIC_ITEM_DROPDOWN_TEXT, itemTextValue);
+		return isElementDisplayed(driver, AbstractPagePageUI.DYNAMIC_ITEM_DROPDOWN_TEXT, itemTextValue);
+	}
+
 }
