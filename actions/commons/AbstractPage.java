@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageUIs.aspire.AbstractPagePageUI;
-import pageUIs.aspire.PersonalDetailsPageUI;
-import pageUIs.aspire.RegisterPageUI;
 
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;

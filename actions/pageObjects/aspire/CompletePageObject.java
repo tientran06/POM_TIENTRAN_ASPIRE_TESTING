@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import pageUIs.aspire.CompletePageUI;
-import pageUIs.aspire.VerifyOTPPageUI;
 
 public class CompletePageObject extends AbstractPage{
 	WebDriver driver;
