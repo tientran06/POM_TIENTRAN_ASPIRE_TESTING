@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Nop Commerce]">
+<suite thread-count="2" name="Failed suite [ASPIRE]" guice-stage="DEVELOPMENT">
   <parameter name="browser" value="chrome"/>
-  <parameter name="url" value="https://demo.nopcommerce.com/"/>
+  <parameter name="url" value="https://feature-qa.customer-frontend.staging.aspireapp.com/sg/"/>
   <listeners>
     <listener class-name="org.uncommons.reportng.HTMLReporter"/>
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
@@ -12,8 +12,7 @@
   <test name="Run on CHROME">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.nopcommerce.common.Common_01_RegisterUser"/>
-      <class name="com.nopcommerce.others.Others_04_Order"/>
+      <class name="com.aspire.registration.Registration_01_Registration"/>
     </classes>
   </test> <!-- Run on CHROME -->
-</suite> <!-- Failed suite [Nop Commerce] -->
+</suite> <!-- Failed suite [ASPIRE] -->

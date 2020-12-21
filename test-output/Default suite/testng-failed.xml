@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test verbose="2" name="Default test">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test" verbose="2">
     <classes>
-      <class name="com.nopcommerce.others.Others_03_WishlistAndCompare"/>
+      <class name="com.aspire.registration.Registration_01_Registration"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="com.nopcommerce.others.Others_03_WishlistAndCompare">
-        <methods>
-          <include name="TC_04_AddProductToCompareAndClearList"/>
-          <include name="TC_05_RecentlyViewedProducts"/>
-          <include name="beforeClass"/>
-          <include name="TC_03_RemoveProductInWishlistPage"/>
-          <include name="TC_01_AddToWishlist"/>
-          <include name="TC_06_AddProductToCompareAndRemove"/>
-          <include name="TC_02_AddProductToCartFromWishlistPage"/>
-          <include name="afterClass"/>
-        </methods>
-      </class> <!-- com.nopcommerce.others.Others_03_WishlistAndCompare -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
