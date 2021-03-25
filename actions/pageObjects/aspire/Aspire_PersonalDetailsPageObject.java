@@ -9,13 +9,12 @@ import org.openqa.selenium.WebElement;
 
 import commons.AbstractPage;
 import commons.GlobalConstants;
-import pageUIs.aspire.BusinessDetailsPageUI;
 import pageUIs.aspire.PersonalDetailsPageUI;
 
-public class PersonalDetailsPageObject extends AbstractPage {
+public class Aspire_PersonalDetailsPageObject extends AbstractPage {
 	WebDriver driver;
 
-	public PersonalDetailsPageObject(WebDriver _driver) {
+	public Aspire_PersonalDetailsPageObject(WebDriver _driver) {
 		driver = _driver;
 	}
 
@@ -26,7 +25,7 @@ public class PersonalDetailsPageObject extends AbstractPage {
 
 	public void selectDateOfBirthByText(String currentYear, String currentMonth, String birthYear, String birthMonth, String birthDay) {
 		openCalendar();
-		sleepInSecond(driver, 1);
+		sleepInSecond(driver, 2);
 		selectBirthDay(currentYear, currentMonth, birthYear, birthMonth, birthDay);
 	}
 
@@ -48,40 +47,47 @@ public class PersonalDetailsPageObject extends AbstractPage {
 	}
 
 	private void selectBirthDay(String currentYear, String currentMonth, String birthYear, String birthMonth, String birthDay) {
-
-		String yearXpath, monthXpath, dayXpath;
-		List<WebElement> itemList;
 		By leftArrow = byXpathLocator(PersonalDetailsPageUI.LEFT_ARROW);
 		By monthButton = byXpathLocator(PersonalDetailsPageUI.DYNAMIC_BUTTON, currentMonth);
 		By yearButton = byXpathLocator(PersonalDetailsPageUI.DYNAMIC_BUTTON, currentYear);
+		String yearXpath, monthXpath, dayXpath;
+		List<WebElement> itemList, yearItemLst;
+		WebElement element;
 
 		waitForElementClickable(driver, PersonalDetailsPageUI.DYNAMIC_BUTTON, currentYear);
 		clickToElement(driver, yearButton);
 
+		element = driver.findElement(leftArrow);
+
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.SHORT_TIMEOUT, TimeUnit.SECONDS);
 		yearXpath = String.format(PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthYear);
-
+		
 		while (true) {
-			itemList = findElementsByXpath(driver, yearXpath);
-			if (itemList.size() > 0) {
-				itemList.get(0).click();
+			yearItemLst = driver.findElements(By.xpath(yearXpath));
+			
+			if (yearItemLst.size() > 0) {
+				yearItemLst.get(0).click();
 				break;
 			} else {
 				waitForElementPresence(driver, PersonalDetailsPageUI.LEFT_ARROW);
-				clickToElement(driver, leftArrow);
+				element = driver.findElement(leftArrow);
+				element.click();
 			}
 		}
 		driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 
-		sleepInSecond(driver, 1);
+		sleepInSecond(driver, 5);
 		waitForElementClickable(driver, PersonalDetailsPageUI.DYNAMIC_BUTTON, currentMonth);
-		clickToElement(driver, monthButton);
+		driver.findElement(monthButton).click();
 
 		monthXpath = String.format(PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthMonth);
-		waitForElementPresence(driver, PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthMonth);
+		
+		itemList = driver.findElements(By.xpath(monthXpath));
+		waitForElementPresence(driver, PersonalDetailsPageUI.DYNAMIC_ITEM_LIST,birthMonth);
 
 		while (true) {
-			itemList = findElementsByXpath(driver, monthXpath);
+			itemList = driver.findElements(By.xpath(monthXpath));
+			
 			if (itemList.size() > 0) {
 				itemList.get(0).click();
 				break;
@@ -89,14 +95,15 @@ public class PersonalDetailsPageObject extends AbstractPage {
 				break;
 			}
 		}
-
-		sleepInSecond(driver, 1);
+		sleepInSecond(driver, 5);
+		
 		dayXpath = String.format(PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthDay);
+		itemList = driver.findElements(By.xpath(dayXpath));
 		waitForElementPresence(driver, PersonalDetailsPageUI.DYNAMIC_ITEM_LIST, birthDay);
 
 		while (true) {
-			itemList = findElementsByXpath(driver, dayXpath);
-
+			itemList = driver.findElements(By.xpath(dayXpath));
+			
 			if (itemList.size() > 0) {
 				itemList.get(0).click();
 				break;
@@ -104,13 +111,7 @@ public class PersonalDetailsPageObject extends AbstractPage {
 				break;
 			}
 		}
+		sleepInSecond(driver, 5);
 	}
 
-	public void inputIdentityCardNo(WebDriver driver, String nameField, String idCardValue) {
-		waitForElementVisible(driver, PersonalDetailsPageUI.DYNAMIC_IDCARD_TEXTBOX, nameField);
-		sendKeyToElement(driver,  PersonalDetailsPageUI.DYNAMIC_IDCARD_TEXTBOX, idCardValue, nameField);
-		
-	}
-	
-	
 }

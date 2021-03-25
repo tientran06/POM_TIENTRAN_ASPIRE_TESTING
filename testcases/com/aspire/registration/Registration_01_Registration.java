@@ -29,7 +29,7 @@ public class Registration_01_Registration extends AbstractTest {
 	private BusinessDetailsPageObject businessDetailsPage;
 
 	private String fullName, email, countryValue, phoneNumber, roleOfCompany, sourceRefer, referralCode, birthYear, birthMonth, birthDay;
-	private String OTPCode, nationality, gender, checkboxItem1, checkboxItem2, businessName, registrationType, UENCode, industry, subIndustry, currentYear, currentMonth;
+	private String OTPCode, nationality, gender, checkboxItem1, checkboxItem2, businessName, entityTypeCategory, entityType, UENCode, website, industry, subIndustry, currentYear, currentMonth, IDCard;
 
 	@Parameters("browser")
 	@BeforeClass
@@ -51,13 +51,16 @@ public class Registration_01_Registration extends AbstractTest {
 		checkboxItem1 = "Credit Line";
 		checkboxItem2 = "Debit Account";
 		businessName = "Automation Testing";
-		registrationType = "Limited liability partnership";
+		entityTypeCategory = "Limited companies";
+		entityType = "Limited Liability Partnership";
 		UENCode = randomNumber8Digits() + randomAlphabetic();
+		website = "https://www.google.com/";
 		industry = "Business Services";
 		subIndustry = "Automotive & Cars";
 		birthYear = "1987";
 		birthMonth = "May";
 		birthDay = "14";
+		IDCard = "342782742874324";
 
 		currentYear = getCurrentYear();
 		currentMonth = getCurrentMonth();
@@ -73,7 +76,7 @@ public class Registration_01_Registration extends AbstractTest {
 		log.info("TC_01_RegisterToSystem - Step 02: Input / Select required fields");
 		registerPage.inputToFullNameTextBox(fullName);
 		registerPage.inputToEmailTextBox(email);
-		registerPage.selectAspireCustomDropdownListByLabel(driver, "Phone number", countryValue);
+		registerPage.selectAspireCustomDropdownListByLabel(driver, "Mobile number", countryValue);
 		registerPage.inputToPhoneNumberTextbox(phoneNumber);
 		registerPage.selectRoleOfCompanyRadioButton(roleOfCompany);
 		registerPage.selectAspireCustomDropdownListByLabel(driver, "Where did you hear about us?", sourceRefer);
@@ -99,7 +102,7 @@ public class Registration_01_Registration extends AbstractTest {
 		completePage = PageGeneratorManager.getcompletePage(driver);
 
 		log.info("TC_02_MobileVerificationOTP - Step 02: Verify Success Message displays");
-		verifyTrue(completePage.isSuccessMessageDisplayedByText("You have successfully verified your phone number. You’re on to a great start!"));
+		verifyTrue(completePage.isSuccessMessageDisplayedByText("You have successfully verified your mobile number. You’re on to a great start!"));
 
 		log.info("TC_02_MobileVerificationOTP - Step 03: Click to 'Continue' button");
 		verifyOTPPage.clickToAsPireButtonByText(driver, "Continue");
@@ -126,6 +129,8 @@ public class Registration_01_Registration extends AbstractTest {
 		verifyTrue(personalDetailsPage.getPersonalInformationByText(fullName).contains(fullName));
 		verifyTrue(personalDetailsPage.getPersonalInformationByText(phoneNumber).contains(phoneNumber));
 		verifyEquals(personalDetailsPage.getPersonalEmail("value"), email);
+		
+		personalDetailsPage.inputIdentityCardNo(driver,"Provide your KTP number", IDCard);
 
 		log.info("TC_03_PersonnalDetailsRegistration - Step 06: Select Date of Birth");
 		personalDetailsPage.selectDateOfBirthByText(currentYear, currentMonth, birthYear , birthMonth , birthDay);
@@ -168,26 +173,29 @@ public class Registration_01_Registration extends AbstractTest {
 
 	@Test(dependsOnMethods = "TC_04_EmailVerificationOTP")
 	public void TC_05_BusinessDetailsRegistration() {
-		log.info("TC_05_BusinessDetailsRegistration - Step 01: Click to 'Get Started' button");
-		businessDetailsPage.clickToAsPireButtonByText(driver, "Get Started");
+		log.info("TC_05_BusinessDetailsRegistration - Step 01: Click to 'Continue' button");
+		businessDetailsPage.clickToAsPireButtonByText(driver, "Continue");
 
 		log.info("TC_05_BusinessDetailsRegistration - Step 02: Input / Select required fields");
 		businessDetailsPage.inputToBusinessDetailTextBox("The full legal business name", businessName);
-		businessDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Registration Type", registrationType);
+		businessDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Entity Type Category", entityTypeCategory);
+		businessDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Entity Type", entityType);
+		
 		businessDetailsPage.inputToBusinessDetailTextBox("Business Registration Number UEN", UENCode);
+		businessDetailsPage.inputToBusinessDetailTextBox("Enter your business website URL", website);
 		businessDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Industry", industry);
 		businessDetailsPage.selectAspireCustomDropdownListByLabel(driver, "Sub Industry", subIndustry);
 		
 		
 		log.info("TC_05_BusinessDetailsRegistration - Step 03: Verify Item in Dropdownlist is selected successfully");
-		verifyTrue(businessDetailsPage.isAspireItemInDropdownSelectedByText(driver, registrationType));
+		verifyTrue(businessDetailsPage.isAspireItemInDropdownSelectedByText(driver, entityTypeCategory));
 		verifyTrue(businessDetailsPage.isAspireItemInDropdownSelectedByText(driver, industry));
 
 		log.info("TC_05_BusinessDetailsRegistration - Step 04: Click 'Submit' button");
 		businessDetailsPage.clickToAsPireButtonByText(driver, "Submit");
 
 		log.info("TC_05_BusinessDetailsRegistration - Step 05: Verify 'Identity Verification' displays ");
-		verifyTrue(businessDetailsPage.isAspireTitleFormDisplayedByText(driver, "Identity Verification"));
+		verifyTrue(businessDetailsPage.isIdentityTextDisplayed(driver));
 		verifyTrue(businessDetailsPage.isAspireButtonDisplayedByText(driver, "Get Started"));
 	}
 

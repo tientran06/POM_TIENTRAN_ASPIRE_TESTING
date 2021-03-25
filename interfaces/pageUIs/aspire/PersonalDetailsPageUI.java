@@ -9,5 +9,6 @@ public class PersonalDetailsPageUI {
 	public static final String LEFT_ARROW = "//div[contains(@class, 'q-date__years-content')]/preceding-sibling::div";
 	public static final String RIGHT_ARROW = "//div[contains(@class, 'q-date__years-content')]/following-sibling::div";
 	public static final String DYNAMIC_ITEM_LIST = "//span[contains(@class,'justify-center row')]//span[text()='%s']";
+	public static final String DYNAMIC_IDCARD_TEXTBOX = "//div//input[@placeholder = '%s']";
 	
 }
