@@ -1,47 +1,47 @@
-2021-03-25 22:38:24,376 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 01: Click to 'Register' link
-2021-03-25 22:38:28,566 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 02: Input / Select required fields
-2021-03-25 22:38:38,096 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 03: Verify Item in Dropdownlist is selected successfully
-2021-03-25 22:38:38,266 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:38:38,699 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 04: Click to 'Continue' button
-2021-03-25 22:38:39,917 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 05: Verify 'Verification OTP' informaiton displays
-2021-03-25 22:38:48,783 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:38:48,787 INFO  com.aspire.registration.Registration_01_Registration - TC_02_MobileVerificationOTP - Step 01: Input OTP code
-2021-03-25 22:38:51,004 INFO  com.aspire.registration.Registration_01_Registration - TC_02_MobileVerificationOTP - Step 02: Verify Success Message displays
-2021-03-25 22:38:56,610 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:38:56,610 INFO  com.aspire.registration.Registration_01_Registration - TC_02_MobileVerificationOTP - Step 03: Click to 'Continue' button
-2021-03-25 22:38:57,775 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 01: Click to 'Continue' button
-2021-03-25 22:39:02,591 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 02: Click to 'Get Started' button
-2021-03-25 22:39:08,923 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 03: Verify 'Personal Details' displays
-2021-03-25 22:39:09,112 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:09,112 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 04: Click to 'Get Started' button
-2021-03-25 22:39:10,498 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 05: Verify Personal information displays
-2021-03-25 22:39:10,707 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:11,847 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:11,982 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:12,858 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 06: Select Date of Birth
-2021-03-25 22:39:37,771 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 07: Select 'Nationality' option
-2021-03-25 22:39:41,016 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 08: Select 'Gender' option
-2021-03-25 22:39:43,616 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 09: Select interested Products
-2021-03-25 22:39:50,795 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 10: Verify Item in Dropdownlist is selected successfully
-2021-03-25 22:39:50,920 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:50,995 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:51,094 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:51,248 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:51,248 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 11: Click 'Submit' button
-2021-03-25 22:39:52,555 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 12: Verify 'Verification OTP' informaiton displays
-2021-03-25 22:39:58,076 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:58,154 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:39:58,160 INFO  com.aspire.registration.Registration_01_Registration - TC_04_EmailVerificationOTP - Step 01: Input OTP code
-2021-03-25 22:40:00,397 INFO  com.aspire.registration.Registration_01_Registration - TC_04_EmailVerificationOTP - Step 02: Verify 'Business Details' displays
-2021-03-25 22:40:05,514 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:40:05,523 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 01: Click to 'Continue' button
-2021-03-25 22:40:06,787 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 02: Input / Select required fields
-2021-03-25 22:40:19,742 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 03: Verify Item in Dropdownlist is selected successfully
-2021-03-25 22:40:19,894 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:40:20,063 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:40:20,063 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 04: Click 'Submit' button
-2021-03-25 22:40:21,371 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 05: Verify 'Identity Verification' displays 
-2021-03-25 22:40:42,329 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:40:43,409 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
-2021-03-25 22:40:43,411 INFO  com.aspire.registration.Registration_01_Registration - OS Name = windows 10
-2021-03-25 22:40:44,679 INFO  com.aspire.registration.Registration_01_Registration - ---------------------- QUIT BROWSER SUCCESS ----------------------
+2021-03-27 23:16:50,599 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 01: Click to 'Register' link
+2021-03-27 23:16:54,440 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 02: Input / Select required fields
+2021-03-27 23:17:04,085 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 03: Verify Item in Dropdownlist is selected successfully
+2021-03-27 23:17:04,306 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:17:04,847 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 04: Click to 'Continue' button
+2021-03-27 23:17:06,161 INFO  com.aspire.registration.Registration_01_Registration - TC_01_RegisterToSystem - Step 05: Verify 'Verification OTP' informaiton displays
+2021-03-27 23:17:11,316 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:17:11,328 INFO  com.aspire.registration.Registration_01_Registration - TC_02_MobileVerificationOTP - Step 01: Input OTP code
+2021-03-27 23:17:13,580 INFO  com.aspire.registration.Registration_01_Registration - TC_02_MobileVerificationOTP - Step 02: Verify Success Message displays
+2021-03-27 23:17:17,342 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:17:17,343 INFO  com.aspire.registration.Registration_01_Registration - TC_02_MobileVerificationOTP - Step 03: Click to 'Continue' button
+2021-03-27 23:17:18,486 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 01: Click to 'Continue' button
+2021-03-27 23:17:22,132 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 02: Click to 'Get Started' button
+2021-03-27 23:17:26,664 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 03: Verify 'Personal Details' displays
+2021-03-27 23:17:26,848 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:17:26,848 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 04: Click to 'Get Started' button
+2021-03-27 23:17:28,232 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 05: Verify Personal information displays
+2021-03-27 23:17:28,449 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:17:28,762 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:17:29,109 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:17:30,246 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 06: Select Date of Birth
+2021-03-27 23:17:55,493 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 07: Select 'Nationality' option
+2021-03-27 23:17:58,967 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 08: Select 'Gender' option
+2021-03-27 23:18:01,584 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 09: Select interested Products
+2021-03-27 23:18:08,689 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 10: Verify Item in Dropdownlist is selected successfully
+2021-03-27 23:18:08,869 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:09,082 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:09,208 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:09,349 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:09,349 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 11: Click 'Submit' button
+2021-03-27 23:18:10,658 INFO  com.aspire.registration.Registration_01_Registration - TC_03_PersonnalDetailsRegistration - Step 12: Verify 'Verification OTP' informaiton displays
+2021-03-27 23:18:14,126 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:14,298 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:14,302 INFO  com.aspire.registration.Registration_01_Registration - TC_04_EmailVerificationOTP - Step 01: Input OTP code
+2021-03-27 23:18:16,540 INFO  com.aspire.registration.Registration_01_Registration - TC_04_EmailVerificationOTP - Step 02: Verify 'Business Details' displays
+2021-03-27 23:18:20,030 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:20,033 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 01: Click to 'Continue' button
+2021-03-27 23:18:21,430 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 02: Input / Select required fields
+2021-03-27 23:18:33,616 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 03: Verify Item in Dropdownlist is selected successfully
+2021-03-27 23:18:33,880 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:34,085 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:34,085 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 04: Click 'Submit' button
+2021-03-27 23:18:35,334 INFO  com.aspire.registration.Registration_01_Registration - TC_05_BusinessDetailsRegistration - Step 05: Verify 'Identity Verification' displays 
+2021-03-27 23:18:54,065 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:55,162 INFO  com.aspire.registration.Registration_01_Registration -  -------------------------- PASSED -------------------------- 
+2021-03-27 23:18:55,164 INFO  com.aspire.registration.Registration_01_Registration - OS Name = windows 10
+2021-03-27 23:18:56,406 INFO  com.aspire.registration.Registration_01_Registration - ---------------------- QUIT BROWSER SUCCESS ----------------------
